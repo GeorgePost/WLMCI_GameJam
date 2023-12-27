@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://fx4uqbgvaspw"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_egi2f"]
+[ext_resource type="Texture2D" uid="uid://daqd5re04xph0" path="res://Menu Background.png" id="2_0wdaf"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_egi2f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -142.0
+offset_right = 203.0
+offset_bottom = -27.0
+grow_vertical = 0
+
+[node name="MenuBackground" type="Sprite2D" parent="VBoxContainer"]
+texture_filter = 1
+position = Vector2(545.778, -181.75)
+scale = Vector2(7.96914, 7.96914)
+texture = ExtResource("2_0wdaf")
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
