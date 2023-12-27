@@ -3,8 +3,15 @@ extends CharacterBody2D
 
 @onready var ray_cast_2d = $RayCast2D
 @export var move_speed = 200
-
+@onready var animations = $AnimationPlayer
+@onready var sword = $Weapon/Sword
+@onready var weapon = $Weapon
+var weaponEquipped = "sword"
+var isAttacking: bool = false
 var dead = false
+
+func _ready():
+	animations.play("RESET")
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -16,7 +23,10 @@ func _process(delta):
 	
 	global_rotation = global_position.direction_to(get_global_mouse_position()).angle() + PI/2.0
 	if Input.is_action_just_pressed("attack"):
-		shoot()
+		if weaponEquipped == "gun":
+			shoot()
+		elif weaponEquipped == "sword":
+			swing()
 
 func _physics_process(delta):
 	if dead:
@@ -24,6 +34,14 @@ func _physics_process(delta):
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = move_dir * move_speed
 	move_and_slide()
+
+func swing():
+	animations.play("AttackDown")
+	isAttacking = true
+	weapon.enable()
+	await animations.animation_finished
+	weapon.disable()
+	isAttacking = false	
 
 func kill():
 	if dead:

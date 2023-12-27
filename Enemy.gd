@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 @onready var ray_cast_2d = $RayCast2D
-
+var health = 100
+var knockbackPower: int = 10
 @export var move_speed = 100
 @onready var player : CharacterBody2D = $"../Player"
-
+@onready var effects = $Effects
+@onready var hurtTimer = $hurtTimer
 
 var dead = false
+func _ready():
+	effects.play("RESET")
 
 func _physics_process(delta):
 	if dead or player == null:
@@ -27,5 +31,24 @@ func kill():
 		return
 	dead = true
 	$Graphics/Alive.hide()
-	$CollisionShape2D.disabled = true
+	$HitBox.disabled = true
 	z_index = -1
+
+
+func _on_hurt_box_area_entered(area):
+	if area == $HitBox: return
+	if player.weaponEquipped == "sword":
+		health -= 20
+		if health == 0:
+			kill()
+	knockback()
+	effects.play("hurtBlink")
+	hurtTimer.start()
+	await hurtTimer.timeout
+	effects.play("RESET")
+	
+func knockback():
+	var knockbackDirection = (velocity) * -knockbackPower
+	velocity = knockbackDirection
+	move_and_slide()
+	
