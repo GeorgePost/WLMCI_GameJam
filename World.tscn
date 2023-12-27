@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://207cran3xvhi"]
+
+[ext_resource type="Texture2D" uid="uid://ds1x7h8k5jaqm" path="res://Texture/TX Tileset Grass.png" id="1_kp0q7"]
+[ext_resource type="Texture2D" uid="uid://omhe2x4aqxck" path="res://icon.svg" id="2_032l6"]
+[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="4_3t1tx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djjmf"]
+size = Vector2(128, 130)
+
+[node name="World" type="Node2D"]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Environment"]
+position = Vector2(-1, -1)
+scale = Vector2(12.4375, 12.4375)
+texture = ExtResource("1_kp0q7")
+
+[node name="Block" type="Sprite2D" parent="Environment"]
+position = Vector2(400, -322)
+texture = ExtResource("2_032l6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block/StaticBody2D"]
+self_modulate = Color(0, 0, 0, 1)
+shape = SubResource("RectangleShape2D_djjmf")
+
+[node name="Player" parent="." instance=ExtResource("3_xuvdj")]
+
+[node name="Enemy" parent="." instance=ExtResource("4_3t1tx")]
+position = Vector2(-104, -176)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_3t1tx")]
+position = Vector2(132, -282)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_3t1tx")]
+position = Vector2(-306, -66)

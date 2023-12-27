@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmy0qi4oomrup"]
+
+[ext_resource type="Script" path="res://PlayerScript.gd" id="1_pq5u1"]
+[ext_resource type="Texture2D" uid="uid://omhe2x4aqxck" path="res://icon.svg" id="2_px2ik"]
+[ext_resource type="Texture2D" uid="uid://d2x0iiknbmqmr" path="res://muzzle_flash.png" id="3_sfq13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88ye2"]
+size = Vector2(127, 127)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_pq5u1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_88ye2")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Alive" type="Sprite2D" parent="Graphics"]
+texture = ExtResource("2_px2ik")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+target_position = Vector2(0, -1000)
+collision_mask = 3
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -79)
+texture = ExtResource("3_sfq13")
+
+[node name="Timer" type="Timer" parent="MuzzleFlash"]
+wait_time = 0.05
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Deathscreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Deathscreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Deathscreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -53.0
+offset_right = 70.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Deathscreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.5
+offset_top = 15.0
+offset_right = 34.5
+offset_bottom = 38.0
+grow_horizontal = 2
+text = "You Died"
+
+[node name="Button" type="Button" parent="CanvasLayer/Deathscreen/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -44.0
+offset_right = 32.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="timeout" from="MuzzleFlash/Timer" to="MuzzleFlash" method="hide"]
+[connection signal="button_up" from="CanvasLayer/Deathscreen/Panel/Button" to="." method="restart"]
