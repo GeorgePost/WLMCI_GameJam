@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmy0qi4oomrup"]
+[gd_scene load_steps=11 format=3 uid="uid://bmy0qi4oomrup"]
 
 [ext_resource type="Script" path="res://PlayerScript.gd" id="1_pq5u1"]
 [ext_resource type="Texture2D" uid="uid://i5lu7ex1gdr7" path="res://character.png" id="2_oiu63"]
 [ext_resource type="Texture2D" uid="uid://d2x0iiknbmqmr" path="res://muzzle_flash.png" id="3_sfq13"]
 [ext_resource type="PackedScene" uid="uid://3qto1rm1c1xg" path="res://sword.tscn" id="4_5ut6o"]
 [ext_resource type="Script" path="res://Weapon.gd" id="4_s2uyd"]
+[ext_resource type="PackedScene" uid="uid://ceuthu25iiu5x" path="res://water_gun_1.tscn" id="6_oiqa0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cufxn"]
 radius = 65.0077
@@ -170,6 +171,10 @@ script = ExtResource("4_s2uyd")
 [node name="Sword" parent="Weapon" instance=ExtResource("4_5ut6o")]
 position = Vector2(-20, -70)
 rotation = -1.0472
+
+[node name="WaterGun1" parent="Weapon" instance=ExtResource("6_oiqa0")]
+position = Vector2(2, -75)
+rotation = 1.5708
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -39,8 +39,10 @@ func _on_hurt_box_area_entered(area):
 	if area == $HitBox: return
 	if player.weaponEquipped == "sword":
 		health -= 20
-		if health == 0:
-			kill()
+	elif player.weaponEquipped == "gun":
+		health -= 30
+	if health <= 0:
+		kill()
 	knockback()
 	effects.play("hurtBlink")
 	hurtTimer.start()
