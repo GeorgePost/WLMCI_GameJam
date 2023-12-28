@@ -12,7 +12,7 @@ var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000
 var fire_rate = 0.2
-var bullet = preload("res://Weapons/bullet.tscn")
+var bullet = preload("res://bullet.tscn")
 var can_fire = true
 
 func _ready():
