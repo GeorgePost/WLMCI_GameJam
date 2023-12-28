@@ -1,38 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://207cran3xvhi"]
+[gd_scene load_steps=5 format=3 uid="uid://207cran3xvhi"]
 
 [ext_resource type="Texture2D" uid="uid://ds1x7h8k5jaqm" path="res://Assets/Texture/TX Tileset Grass.png" id="1_kp0q7"]
-[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="2_itdkh"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
 [ext_resource type="PackedScene" uid="uid://d14iejt6m78bi" path="res://Boss/boss_1.tscn" id="4_i3p5p"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
-texture = ExtResource("2_itdkh")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_duh5j"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
-sources/0 = SubResource("TileSetAtlasSource_hlfyq")
 
 [node name="World" type="Node2D"]
 
