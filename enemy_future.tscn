@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5p5e3u3xnfvj"]
+[gd_scene load_steps=11 format=3 uid="uid://b5p5e3u3xnfvj"]
 
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="1_2rp5q"]
 [ext_resource type="Script" path="res://enemy_future.gd" id="1_m0bv1"]
@@ -50,6 +50,9 @@ _data = {
 "RESET": SubResource("Animation_wojk3"),
 "hurtBlink": SubResource("Animation_mband")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gof8u"]
+radius = 484.0
 
 [node name="EnemyFuture" type="CharacterBody2D"]
 collision_layer = 2
@@ -114,5 +117,13 @@ libraries = {
 wait_time = 0.382
 one_shot = true
 
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_gof8u")
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

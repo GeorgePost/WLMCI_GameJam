@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ds1x7h8k5jaqm" path="res://Assets/Texture/TX Tileset Grass.png" id="1_kp0q7"]
 [ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="2_itdkh"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
-[ext_resource type="PackedScene" uid="uid://d14iejt6m78bi" path="res://Boss/boss_1.tscn" id="4_i3p5p"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="4_xuc4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
 texture = ExtResource("2_itdkh")
@@ -51,5 +51,5 @@ layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0
 
 [node name="Player" parent="." instance=ExtResource("3_xuvdj")]
 
-[node name="Boss1" parent="." instance=ExtResource("4_i3p5p")]
-position = Vector2(-411, -8)
+[node name="Enemy" parent="." instance=ExtResource("4_xuc4v")]
+position = Vector2(-358, -54)
