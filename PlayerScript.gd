@@ -71,7 +71,7 @@ func restart():
 	get_tree().reload_current_scene()
 
 func shoot():
-	var bullet_instance = bullet.instantiate() as Bullet
+	var bullet_instance = bullet.instantiate() 
 	get_tree().root.add_child(bullet_instance)
 	
 	var move_direction = (get_global_mouse_position() - global_position).normalized()

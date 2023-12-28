@@ -71,9 +71,9 @@ _data = {
 "RESET": SubResource("Animation_30yef")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 6
-collision_mask = 7
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_pq5u1")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
