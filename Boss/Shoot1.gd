@@ -1,12 +1,11 @@
 extends State
-class_name Shoot1State
+class_name ShootState
 
 @export var enemy_bullet_node : PackedScene 
 @onready var timer = $Timer
-var enemyBullet = preload("res://BossBulletPast.tscn")
+var enemyBullet = preload("res://enemy_bullet.tscn")
 @onready var Boss1 = $"../.."
 @onready var player: CharacterBody2D = $"../../../Player"
-
 
 func transition():
 	var xValue = abs(player.position.x-global_position.x)

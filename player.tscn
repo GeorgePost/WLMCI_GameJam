@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmy0qi4oomrup"]
+[gd_scene load_steps=12 format=3 uid="uid://bmy0qi4oomrup"]
 
 [ext_resource type="Script" path="res://PlayerScript.gd" id="1_pq5u1"]
 [ext_resource type="Texture2D" uid="uid://i5lu7ex1gdr7" path="res://Assets/character.png" id="2_oiu63"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3qto1rm1c1xg" path="res://Weapons/sword.tscn" id="4_5ut6o"]
 [ext_resource type="Script" path="res://Weapons/Weapon.gd" id="4_s2uyd"]
 [ext_resource type="PackedScene" uid="uid://ceuthu25iiu5x" path="res://Weapons/water_gun_1.tscn" id="6_oiqa0"]
+[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="7_sre5r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cufxn"]
 radius = 65.0077
@@ -180,6 +181,13 @@ rotation = 1.5708
 libraries = {
 "": SubResource("AnimationLibrary_t8hhm")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = -1
+scale = Vector2(2.375, 2.375)
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("7_sre5r")
 
 [connection signal="timeout" from="MuzzleFlash/Timer" to="MuzzleFlash" method="hide"]
 [connection signal="button_up" from="CanvasLayer/Deathscreen/Panel/Button" to="." method="restart"]

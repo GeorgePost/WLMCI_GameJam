@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name EnemyBullet
+class_name EnemyBulletFuture
 const RIGHT = Vector2.RIGHT
 var SPEED: int = 200
 @onready var player : CharacterBody2D = $"../Player"

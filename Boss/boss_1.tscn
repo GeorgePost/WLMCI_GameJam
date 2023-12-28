@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Boss/boss_1.gd" id="1_nmtgf"]
 [ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="2_7vux2"]
 [ext_resource type="Script" path="res://Boss/Idle.gd" id="4_u2fos"]
-[ext_resource type="Script" path="res://Boss/Shoot.gd" id="5_hjlqw"]
+[ext_resource type="Script" path="res://Boss/Shoot1.gd" id="5_vwmcl"]
 [ext_resource type="Script" path="res://Boss/Follow.gd" id="6_gero5"]
 [ext_resource type="Script" path="res://Boss/Dash.gd" id="7_mvs65"]
 
@@ -101,7 +101,7 @@ script = ExtResource("2_7vux2")
 script = ExtResource("4_u2fos")
 
 [node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("5_hjlqw")
+script = ExtResource("5_vwmcl")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
 wait_time = 0.75

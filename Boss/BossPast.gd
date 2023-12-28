@@ -30,7 +30,8 @@ func _process(_delta):
  
 func _physics_process(delta):
 	
-
+	var dir_to_player = global_position.direction_to(player.global_position)
+	
 	velocity = dir_to_player * speed
 	move_and_slide()
 	

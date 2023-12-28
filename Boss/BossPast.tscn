@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cxf7k6uja88kj"]
 
-[ext_resource type="Script" path="res://Boss/boss_1.gd" id="1_fsa3p"]
+[ext_resource type="Script" path="res://Boss/BossPast.gd" id="1_jn4lr"]
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_4ao5k"]
 [ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="3_bkef7"]
 [ext_resource type="Script" path="res://Boss/Idle.gd" id="4_w25es"]
@@ -55,7 +55,7 @@ _data = {
 }
 
 [node name="Boss1" type="CharacterBody2D"]
-script = ExtResource("1_fsa3p")
+script = ExtResource("1_jn4lr")
 
 [node name="Alive" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -84,7 +84,7 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_eq58f")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-1, 259)
+target_position = Vector2(1, -198)
 collision_mask = 6
 
 [node name="debug" type="Label" parent="."]
@@ -95,6 +95,7 @@ offset_bottom = -38.0
 text = "Test"
 
 [node name="FiniteStateMachine" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_bkef7")
 
 [node name="Idle" type="Node2D" parent="FiniteStateMachine"]

@@ -2,7 +2,7 @@ extends Node2D
 class_name State
 #Abstract Class
 
-@onready var player = owner.get_parent().find_child("Player")
+@onready var player1 = owner.find_child("Player")
 @onready var ray_cast = owner.find_child("RayCast2D")
 @onready var debug = owner.find_child("debug")
 
