@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt3g5rruy5vug"]
+[gd_scene load_steps=10 format=3 uid="uid://dt3g5rruy5vug"]
 
 [ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_o3edd"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="2_8fgdn"]
 [ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="3_givfn"]
+[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="4_3383q"]
 [ext_resource type="Script" path="res://Door.gd" id="4_mhl3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
@@ -67,6 +68,13 @@ scale = Vector2(1, 1.00326)
 shape = SubResource("RectangleShape2D_4u375")
 
 [node name="Player" parent="." instance=ExtResource("2_8fgdn")]
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+z_index = -1
+scale = Vector2(2.375, 2.375)
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("4_3383q")
 
 [node name="Enemy" parent="." instance=ExtResource("3_givfn")]
 position = Vector2(336, -141)
