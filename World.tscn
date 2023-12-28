@@ -1,13 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://207cran3xvhi"]
+[gd_scene load_steps=7 format=3 uid="uid://207cran3xvhi"]
 
 [ext_resource type="Texture2D" uid="uid://ds1x7h8k5jaqm" path="res://Assets/Texture/TX Tileset Grass.png" id="1_kp0q7"]
-[ext_resource type="Texture2D" uid="uid://omhe2x4aqxck" path="res://Assets/icon.svg" id="2_032l6"]
+[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="2_itdkh"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
 [ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="4_3t1tx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bb5hy"]
-radius = 65.0
-height = 136.0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
+texture = ExtResource("2_itdkh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_duh5j"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_hlfyq")
 
 [node name="World" type="Node2D"]
 
@@ -18,15 +27,11 @@ position = Vector2(-1, -1)
 scale = Vector2(12.4375, 12.4375)
 texture = ExtResource("1_kp0q7")
 
-[node name="Block" type="Sprite2D" parent="Environment"]
-position = Vector2(400, -322)
-texture = ExtResource("2_032l6")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block/StaticBody2D"]
-shape = SubResource("CapsuleShape2D_bb5hy")
+[node name="TileMap" type="TileMap" parent="Environment"]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_duh5j")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 65536, 1342177281, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 65536, 805306369, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 65536, 805306369, 327675, 0, 0, 327674, 0, 0, 327673, 0, 0, 327672, 0, 0, 327671, 0, 0, 262135, 0, 0, 196599, 0, 0, 131063, 0, 0, 65527, 65536, 1610612737, -9, 0, 0, -65545, 0, 0, -131081, 0, 0, -196617, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 1, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 65536, 1, -327676, 0, 0, -327675, 0, 0, -327674, 65536, 0, -327673, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_xuvdj")]
 
@@ -34,7 +39,7 @@ shape = SubResource("CapsuleShape2D_bb5hy")
 position = Vector2(-104, -176)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_3t1tx")]
-position = Vector2(132, -282)
+position = Vector2(145, -142)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_3t1tx")]
 position = Vector2(-306, -66)
