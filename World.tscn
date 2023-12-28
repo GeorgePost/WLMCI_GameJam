@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
 [ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="4_3t1tx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_djjmf"]
-size = Vector2(128, 130)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bb5hy"]
+radius = 65.0
+height = 136.0
 
 [node name="World" type="Node2D"]
 
@@ -22,10 +23,10 @@ position = Vector2(400, -322)
 texture = ExtResource("2_032l6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block/StaticBody2D"]
-self_modulate = Color(0, 0, 0, 1)
-shape = SubResource("RectangleShape2D_djjmf")
+shape = SubResource("CapsuleShape2D_bb5hy")
 
 [node name="Player" parent="." instance=ExtResource("3_xuvdj")]
 
