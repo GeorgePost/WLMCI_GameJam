@@ -45,18 +45,19 @@ func _input(event):
 		health -= 1
 		
 func _on_hurt_box_area_entered(area):
-	if area == $HitBox: return
-	if player.weaponEquipped == "sword":
-		health -= 51
-	elif player.weaponEquipped == "gun":
-		health -= 51
-	if health <= 0:
-		kill()
-	color_rect.visible = true
-	effects.play("hurtBlink")
-	hurtTimer.start()
-	await hurtTimer.timeout
-	color_rect.visible = false
+	if area.is_in_group("PlayerBullet"):
+		if area == $HitBox: return
+		if player.weaponEquipped == "sword":
+			health -= 51
+		elif player.weaponEquipped == "gun":
+			health -= 51
+		if health <= 0:
+			kill()
+		color_rect.visible = true
+		effects.play("hurtBlink")
+		hurtTimer.start()
+		await hurtTimer.timeout
+		color_rect.visible = false
 
 func kill():
 	$".".queue_free()

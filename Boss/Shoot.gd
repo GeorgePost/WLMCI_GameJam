@@ -3,7 +3,7 @@ class_name ShootState
 
 @export var enemy_bullet_node : PackedScene 
 @onready var timer = $Timer
-var enemyBullet = preload("res://enemy_bullet.tscn")
+var enemyBullet = preload("res://BossBulletPast.tscn")
 @onready var Boss1 = $"../.."
 
 func transition():

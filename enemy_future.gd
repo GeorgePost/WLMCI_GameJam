@@ -15,7 +15,7 @@ var seePlayer = false
 var target: Node2D = null
 var dead = false
 func _ready():
-	effects.play("RESET")
+	effects.play("hurtBlink")
 
 
 func _physics_process(delta):
@@ -47,18 +47,19 @@ func kill():
 
 
 func _on_hurt_box_area_entered(area):
-	if area == $HitBox: return
-	if player.weaponEquipped == "sword":
-		health -= 20
-	elif player.weaponEquipped == "gun":
-		health -= 30
-	if health <= 0:
-		kill()
-	knockback()
-	effects.play("hurtBlink")
-	hurtTimer.start()
-	await hurtTimer.timeout
-	effects.play("RESET")
+	if area.is_in_group("PlayerBullet"):
+		if area == $HitBox: return
+		if player.weaponEquipped == "sword":
+			health -= 20
+		elif player.weaponEquipped == "gun":
+			health -= 30
+		if health <= 0:
+			kill()
+		knockback()
+		effects.play("RESET")
+		hurtTimer.start()
+		await hurtTimer.timeout
+		effects.play("hurtBlink")
 	
 func knockback():
 	var knockbackDirection = (velocity) * -knockbackPower
@@ -76,10 +77,6 @@ func shoot():
 	bullet.global_rotation = ray_cast_2d.global_rotation
 	
 	reloadTimer.start()
-
-
-
-
 
 
 func _on_detection_area_body_entered(body):

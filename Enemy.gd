@@ -37,18 +37,19 @@ func kill():
 
 
 func _on_hurt_box_area_entered(area):
-	if area == $HitBox: return
-	if player.weaponEquipped == "sword":
-		health -= 20
-	elif player.weaponEquipped == "gun":
-		health -= 30
-	if health <= 0:
-		kill()
-	knockback()
-	effects.play("hurtBlink")
-	hurtTimer.start()
-	await hurtTimer.timeout
-	effects.play("RESET")
+	if area.is_in_group("PlayerBullet"):
+		if area == $HitBox: return
+		if player.weaponEquipped == "sword":
+			health -= 20
+		elif player.weaponEquipped == "gun":
+			health -= 30
+		if health <= 0:
+			kill()
+		knockback()
+		effects.play("hurtBlink")
+		hurtTimer.start()
+		await hurtTimer.timeout
+		effects.play("RESET")
 	
 func knockback():
 	var knockbackDirection = (velocity) * -knockbackPower

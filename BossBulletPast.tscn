@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnn27vc165hr5"]
+
+[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_6rr7y"]
+[ext_resource type="Texture2D" uid="uid://c2mp8xgjvu1qg" path="res://Assets/Boulder.png" id="2_csusr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntyfn"]
+radius = 29.0172
+
+[node name="EnemyBullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_6rr7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(71, 1)
+scale = Vector2(3.85714, 3.85714)
+texture = ExtResource("2_csusr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(68, 1)
+shape = SubResource("CircleShape2D_ntyfn")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
