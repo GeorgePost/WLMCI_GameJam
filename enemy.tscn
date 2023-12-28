@@ -1,28 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://lw87ntxtx7jg"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_mdg8n"]
-[ext_resource type="Texture2D" path="res://Enemy1.png" id="2_qv6bu"]
+[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_qv6bu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypfhb"]
 radius = 12.0416
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oy2a7"]
 size = Vector2(32, 33)
-
-[sub_resource type="Animation" id="Animation_mband"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Graphics/Alive/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_wojk3"]
 resource_name = "hurtBlink"
@@ -39,6 +24,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.533333), Color(1, 0, 0, 0.533333)]
+}
+
+[sub_resource type="Animation" id="Animation_mband"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphics/Alive/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q4dsh"]
