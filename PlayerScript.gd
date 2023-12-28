@@ -78,3 +78,6 @@ func shoot():
 	bullet_instance.move_direction = move_direction
 	bullet_instance.global_position = global_position
 	bullet_instance.rotation = move_direction.angle()
+
+func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	get_tree().change_scene_to_file("res://World.tscn")

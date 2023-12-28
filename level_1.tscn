@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt3g5rruy5vug"]
+
+[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_o3edd"]
+[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="2_8fgdn"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="3_givfn"]
+[ext_resource type="Script" path="res://Door.gd" id="4_mhl3k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
+texture = ExtResource("1_o3edd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_xy0us"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_hlfyq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6364j"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/CaveTextures.png-5e2b61cc27a426927ce3bcc4f01c2f40.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u375"]
+size = Vector2(26.25, 24.6858)
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_xy0us")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 65536, 1342177281, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 65536, 805306369, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 65536, 805306369, 327675, 0, 0, 327674, 0, 0, 327673, 0, 0, 327672, 0, 0, 327671, 0, 0, 262135, 0, 0, 196599, 0, 0, 131063, 0, 0, 65527, 65536, 1610612737, -9, 0, 0, -65545, 0, 0, -131081, 0, 0, -196617, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 1, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 65536, 1, -327676, 0, 0, -327675, 0, 0, -327673, 0, 0, -65531, 0, 0, 1, 0, 0, -262143, 0, 0, -5, 0, 0, -327674, 0, 0)
+
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(479, -223)
+scale = Vector2(2, 2)
+collision_mask = 3
+script = ExtResource("4_mhl3k")
+
+[node name="Sprite" type="Sprite2D" parent="Door"]
+texture = SubResource("CompressedTexture2D_6364j")
+hframes = 2
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0.125, 0.616852)
+scale = Vector2(1, 1.00326)
+shape = SubResource("RectangleShape2D_4u375")
+
+[node name="Player" parent="." instance=ExtResource("2_8fgdn")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_givfn")]
+position = Vector2(336, -141)
+scale = Vector2(1.69308, 1.69308)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_givfn")]
+position = Vector2(-320, -153)
+scale = Vector2(1.69308, 1.69308)
+
+[connection signal="area_entered" from="Door" to="Player" method="_on_door_area_entered"]
+[connection signal="body_entered" from="Door" to="Player" method="_on_door_body_entered"]
+[connection signal="body_shape_entered" from="Door" to="Player" method="_on_door_body_shape_entered"]
+[connection signal="lostEnemy" from="Enemy" to="Door" method="_on_enemy_lost_enemy"]
+[connection signal="lostEnemy" from="Enemy2" to="Door" method="_on_enemy_lost_enemy"]

@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @onready var ray_cast_2d = $RayCast2D
-var health = 100
+var health = 100	
 var knockbackPower: int = 10
 @export var move_speed = 100
 @onready var player : CharacterBody2D = $"../Player"
 @onready var effects = $Effects
 @onready var hurtTimer = $hurtTimer
+signal lostEnemy()
 var seePlayer = false
 
 var dead = false
@@ -30,6 +31,7 @@ func _physics_process(delta):
 func kill():
 	$".".queue_free()
 	dead = true
+	emit_signal("lostEnemy")
 	$Graphics/Alive.hide()
 	$HitBox.disabled = true
 	$HurtBox/CollisionShape2D.disabled = true
