@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://d14iejt6m78bi"]
+
+[ext_resource type="Script" path="res://boss_1.gd" id="1_a5j23"]
+[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="1_g4451"]
+[ext_resource type="Script" path="res://FiniteStateMachine.gd" id="2_hdfhy"]
+[ext_resource type="Script" path="res://Idle.gd" id="4_16woa"]
+[ext_resource type="Script" path="res://Shoot.gd" id="5_yisjx"]
+[ext_resource type="Script" path="res://Follow.gd" id="6_cxoje"]
+[ext_resource type="Script" path="res://Dash.gd" id="7_366tm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqwc1"]
+size = Vector2(80, 80)
+
+[node name="Boss1" type="CharacterBody2D"]
+script = ExtResource("1_a5j23")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.51613, 2.51613)
+texture = ExtResource("1_g4451")
+region_enabled = true
+region_rect = Rect2(0, 32.4899, 31.8723, 31.5101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jqwc1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(1, 220)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -61.0
+offset_right = 22.0
+offset_bottom = -38.0
+text = "Test"
+
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("2_hdfhy")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("4_16woa")
+
+[node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("5_yisjx")
+
+[node name="Follow" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_cxoje")
+
+[node name="Dash" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("7_366tm")

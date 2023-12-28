@@ -11,23 +11,8 @@ radius = 12.0416
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gj0n"]
 size = Vector2(60, 60)
 
-[sub_resource type="Animation" id="Animation_mband"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Graphics/Alive/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_wojk3"]
-resource_name = "hurtBlink"
+resource_name = "RESET"
 length = 0.3
 step = 0.2
 tracks/0/type = "value"
@@ -43,10 +28,27 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.533333), Color(1, 0, 0, 0.533333)]
 }
 
+[sub_resource type="Animation" id="Animation_mband"]
+resource_name = "hurtBlink"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alive/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.42, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0, 0, 0.713726), Color(1, 1, 1, 0.352941), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q4dsh"]
 _data = {
-"RESET": SubResource("Animation_mband"),
-"hurtBlink": SubResource("Animation_wojk3")
+"RESET": SubResource("Animation_wojk3"),
+"hurtBlink": SubResource("Animation_mband")
 }
 
 [node name="EnemyFuture" type="CharacterBody2D"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://d14iejt6m78bi"]
+
+[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="1_g4451"]
+[ext_resource type="Script" path="res://Boss/boss_1.gd" id="1_nmtgf"]
+[ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="2_7vux2"]
+[ext_resource type="Script" path="res://Boss/Idle.gd" id="4_u2fos"]
+[ext_resource type="Script" path="res://Boss/Shoot.gd" id="5_hjlqw"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="6_apxcj"]
+[ext_resource type="Script" path="res://Boss/Follow.gd" id="6_gero5"]
+[ext_resource type="Script" path="res://Boss/Dash.gd" id="7_mvs65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd1n"]
+size = Vector2(80, 78)
+
+[node name="Boss1" type="CharacterBody2D"]
+script = ExtResource("1_nmtgf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.45161, 2.45161)
+texture = ExtResource("1_g4451")
+region_enabled = true
+region_rect = Rect2(0, 32.4899, 31.8723, 31.5101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1yd1n")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-1, 451)
+
+[node name="debug" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -61.0
+offset_right = 20.0
+offset_bottom = -38.0
+text = "Test"
+
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("2_7vux2")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("4_u2fos")
+
+[node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("5_hjlqw")
+bullet_node = ExtResource("6_apxcj")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
+wait_time = 0.75
+
+[node name="Follow" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_gero5")
+
+[node name="Dash" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("7_mvs65")

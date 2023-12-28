@@ -1,0 +1,138 @@
+[gd_scene load_steps=13 format=3 uid="uid://d14iejt6m78bi"]
+
+[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="1_g4451"]
+[ext_resource type="Script" path="res://Boss/boss_1.gd" id="1_nmtgf"]
+[ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="2_7vux2"]
+[ext_resource type="Script" path="res://Boss/Idle.gd" id="4_u2fos"]
+[ext_resource type="Script" path="res://Boss/Shoot.gd" id="5_hjlqw"]
+[ext_resource type="Script" path="res://Boss/Follow.gd" id="6_gero5"]
+[ext_resource type="Script" path="res://Boss/Dash.gd" id="7_mvs65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd1n"]
+size = Vector2(80, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq58f"]
+size = Vector2(82, 80)
+
+[sub_resource type="Animation" id="Animation_wojk3"]
+resource_name = "RESET"
+length = 0.3
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphics/Alive/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.533333), Color(1, 0, 0, 0.533333)]
+}
+
+[sub_resource type="Animation" id="Animation_mband"]
+resource_name = "hurtBlink"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alive/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.42, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0, 0, 0.713726), Color(1, 1, 1, 0.352941), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q4dsh"]
+_data = {
+"RESET": SubResource("Animation_wojk3"),
+"hurtBlink": SubResource("Animation_mband")
+}
+
+[node name="Boss1" type="CharacterBody2D"]
+script = ExtResource("1_nmtgf")
+
+[node name="Alive" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.45161, 2.45161)
+texture = ExtResource("1_g4451")
+region_enabled = true
+region_rect = Rect2(0, 32.4899, 31.8723, 31.5101)
+
+[node name="ColorRect" type="ColorRect" parent="Alive"]
+clip_children = 2
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1yd1n")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_eq58f")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-1, 259)
+collision_mask = 6
+
+[node name="debug" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -61.0
+offset_right = 20.0
+offset_bottom = -38.0
+text = "Test"
+
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("2_7vux2")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("4_u2fos")
+
+[node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("5_hjlqw")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
+wait_time = 0.75
+
+[node name="Follow" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_gero5")
+
+[node name="Dash" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("7_mvs65")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Dash"]
+wait_time = 1.5
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q4dsh")
+}
+
+[node name="hurtTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -46.0
+offset_top = -88.0
+offset_right = 54.0
+offset_bottom = -61.0
+value = 100.0
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]
+[connection signal="timeout" from="FiniteStateMachine/Dash/Timer" to="FiniteStateMachine/Dash" method="_on_timer_timeout"]
+[connection signal="timeout" from="hurtTimer" to="." method="_on_hurt_timer_timeout"]
