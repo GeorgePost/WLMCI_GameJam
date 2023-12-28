@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4g20nlnjph2"
-path="res://.godot/imported/TX Plant.png-a53f29e5fe2c6be152f6ab6f4c227ffb.ctex"
+uid="uid://c30isbevq4s1n"
+path="res://.godot/imported/TX Props.png-d70ab2725925c8e1fb6dc1819d02a5a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/TX Plant.png"
-dest_files=["res://.godot/imported/TX Plant.png-a53f29e5fe2c6be152f6ab6f4c227ffb.ctex"]
+source_file="res://Assets/Texture/TX Props.png"
+dest_files=["res://.godot/imported/TX Props.png-d70ab2725925c8e1fb6dc1819d02a5a9.ctex"]
 
 [params]
 

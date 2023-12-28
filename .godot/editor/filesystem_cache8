@@ -1,36 +1,42 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703728549
-CaveTextures.png::CompressedTexture2D::3514161102278496552::1703728549::1703728549::1::::<><>::
-character.png::CompressedTexture2D::624147372531003038::1703707280::1703707280::1::::<><>::
+::res://::1703729742
+bullet.gd::GDScript::-1::1703728525::0::1::::Bullet<>Area2D<>::
+bullet.tscn::PackedScene::5455584555007413114::1703729759::0::1::::<><>::res://bullet.gd
 CharacterBody2D.gd::GDScript::-1::1703642048::0::1::::<>CharacterBody2D<>::
-Enemies.png::CompressedTexture2D::440037148842327456::1703637276::1703637277::1::::<><>::
-Enemy1.png::CompressedTexture2D::2469785876911120845::1703641642::1703641642::1::::<><>::
 Enemy.gd::GDScript::-1::1703713324::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::819555110000103488::1703728526::0::1::::<><>::res://Enemy.gd<>uid://bbgnaorml4t6l::::res://Enemy1.png
-icon.svg::CompressedTexture2D::1007849961085393802::1703633743::1703633743::1::::<><>::
-Menu Background.png::CompressedTexture2D::7192528720191436907::1703708072::1703708134::1::::<><>::
+enemy.tscn::PackedScene::819555110000103488::1703729724::0::1::::<><>::res://Enemy.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png
 menu.gd::GDScript::-1::1703708072::0::1::::<>Control<>::
-menu.tscn::PackedScene::400222257420965804::1703727946::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Menu Background.png
-muzzle_flash.png::CompressedTexture2D::9103374165047285881::1703640861::1703640862::1::::<><>::
-player.tscn::PackedScene::3279778836609990075::1703728526::0::1::::<><>::res://PlayerScript.gd<>uid://i5lu7ex1gdr7::::res://character.png<>uid://d2x0iiknbmqmr::::res://muzzle_flash.png<>uid://3qto1rm1c1xg::::res://sword.tscn<>res://Weapon.gd<>uid://ceuthu25iiu5x::::res://water_gun_1.tscn
+menu.tscn::PackedScene::400222257420965804::1703729719::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Assets/Menu Background.png
+player.tscn::PackedScene::3279778836609990075::1703729759::0::1::::<><>::res://PlayerScript.gd<>uid://i5lu7ex1gdr7::::res://Assets/character.png<>uid://d2x0iiknbmqmr::::res://Assets/muzzle_flash.png<>uid://3qto1rm1c1xg::::res://sword.tscn<>res://Weapon.gd<>uid://ceuthu25iiu5x::::res://water_gun_1.tscn
 PlayerScript.gd::GDScript::-1::1703714950::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1703633743::0::1::::<><>::
-bullet.tscn::PackedScene::5455584555007413114::1703728537::0::1::::<><>::res://bullet.gd
-bullet.gd::GDScript::-1::1703728525::0::1::::Bullet<>Area2D<>::
-water_gun_1.tscn::PackedScene::5096051513990238371::1703728526::0::1::::<><>::uid://c5iepdx03ldfk::::res://WaterGuns.png
-Weapon.gd::GDScript::-1::1703707910::0::1::::<>Node2D<>::
+Sprite2D.gd::GDScript::-1::1703729194::0::1::::<>Sprite2D<>::
+stick.tscn::PackedScene::4839139953783477336::1703729759::0::1::::<><>::res://sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
 sword.gd::GDScript::-1::1703707611::0::1::::<>Area2D<>::
-sword.tscn::PackedScene::1999497682355952620::1703728526::0::1::::<><>::uid://cu6cbhswnfegb::::res://Weapons.png<>res://sword.gd
-WaterGuns.png::CompressedTexture2D::6895291547713582136::1703705100::1703705100::1::::<><>::
-Weapons.png::CompressedTexture2D::6240737566789224213::1703637276::1703637277::1::::<><>::
-World.tscn::PackedScene::1948655630960664290::1703728526::0::1::::<><>::uid://ds1x7h8k5jaqm::::res://Texture/TX Tileset Grass.png<>uid://omhe2x4aqxck::::res://icon.svg<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn
-::res://Texture/::1703638396
-TX Plant.png::CompressedTexture2D::200658494219573629::1703638396::1703638396::1::::<><>::
-TX Player.png::CompressedTexture2D::178947674373996438::1703638396::1703638396::1::::<><>::
-TX Props.png::CompressedTexture2D::6790256373014277713::1703638396::1703638396::1::::<><>::
-TX Shadow Plant.png::CompressedTexture2D::1827759714091878725::1703638396::1703638396::1::::<><>::
-TX Shadow.png::CompressedTexture2D::2613894161242138574::1703638396::1703638396::1::::<><>::
-TX Struct.png::CompressedTexture2D::8134116282141141887::1703638396::1703638396::1::::<><>::
-TX Tileset Grass.png::CompressedTexture2D::8477789113544820948::1703638396::1703638396::1::::<><>::
-TX Tileset Stone Ground.png::CompressedTexture2D::8905625486450070460::1703638396::1703638396::1::::<><>::
-TX Tileset Wall.png::CompressedTexture2D::1102048623919333439::1703638396::1703638396::1::::<><>::
+sword.tscn::PackedScene::1999497682355952620::1703729759::0::1::::<><>::res://sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
+upgraded_stick.tscn::PackedScene::8356339673607074963::1703729759::0::1::::<><>::res://sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
+water_gun_1.tscn::PackedScene::5096051513990238371::1703729724::0::1::::<><>::uid://c5iepdx03ldfk::::res://Assets/WaterGuns.png
+Weapon.gd::GDScript::-1::1703707910::0::1::::<>Node2D<>::
+World.tscn::PackedScene::1948655630960664290::1703729724::0::1::::<><>::uid://ds1x7h8k5jaqm::::res://Assets/Texture/TX Tileset Grass.png<>uid://omhe2x4aqxck::::res://Assets/icon.svg<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn
+::res://Assets/::1703729721
+CaveTextures.png::CompressedTexture2D::3514161102278496552::1703728549::1703729721::1::::<><>::
+character.png::CompressedTexture2D::624147372531003038::1703707280::1703729721::1::::<><>::
+Enemies.png::CompressedTexture2D::440037148842327456::1703637276::1703729721::1::::<><>::
+Enemy1.png::CompressedTexture2D::2469785876911120845::1703641642::1703729721::1::::<><>::
+icon.svg::CompressedTexture2D::1007849961085393802::1703633743::1703729721::1::::<><>::
+Menu Background.png::CompressedTexture2D::7192528720191436907::1703708072::1703729721::1::::<><>::
+muzzle_flash.png::CompressedTexture2D::9103374165047285881::1703640861::1703729721::1::::<><>::
+WaterGuns.png::CompressedTexture2D::6895291547713582136::1703705100::1703729721::1::::<><>::
+Weapons1.png::CompressedTexture2D::3477479960494785143::1703729399::1703729721::1::::<><>::
+Weapons.png::CompressedTexture2D::6240737566789224213::1703729430::1703729721::1::::<><>::
+::res://Assets/Texture/::1703729721
+TX Plant.png::CompressedTexture2D::200658494219573629::1703638396::1703729721::1::::<><>::
+TX Player.png::CompressedTexture2D::178947674373996438::1703638396::1703729721::1::::<><>::
+TX Props.png::CompressedTexture2D::6790256373014277713::1703638396::1703729721::1::::<><>::
+TX Shadow Plant.png::CompressedTexture2D::1827759714091878725::1703638396::1703729721::1::::<><>::
+TX Shadow.png::CompressedTexture2D::2613894161242138574::1703638396::1703729721::1::::<><>::
+TX Struct.png::CompressedTexture2D::8134116282141141887::1703638396::1703729721::1::::<><>::
+TX Tileset Grass.png::CompressedTexture2D::8477789113544820948::1703638396::1703729721::1::::<><>::
+TX Tileset Stone Ground.png::CompressedTexture2D::8905625486450070460::1703638396::1703729721::1::::<><>::
+TX Tileset Wall.png::CompressedTexture2D::1102048623919333439::1703638396::1703729721::1::::<><>::
+::res://Weapons/::1703729742

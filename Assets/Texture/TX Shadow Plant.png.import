@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2x0iiknbmqmr"
-path="res://.godot/imported/muzzle_flash.png-3752dcd6c63c34f3060c905e89e3a541.ctex"
+uid="uid://1bm62nai3vy8"
+path="res://.godot/imported/TX Shadow Plant.png-51bb6b29f8ab22feac34d8027535667f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://muzzle_flash.png"
-dest_files=["res://.godot/imported/muzzle_flash.png-3752dcd6c63c34f3060c905e89e3a541.ctex"]
+source_file="res://Assets/Texture/TX Shadow Plant.png"
+dest_files=["res://.godot/imported/TX Shadow Plant.png-51bb6b29f8ab22feac34d8027535667f.ctex"]
 
 [params]
 

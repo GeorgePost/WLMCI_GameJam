@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1bm62nai3vy8"
-path="res://.godot/imported/TX Shadow Plant.png-4701bc454f75d56554ecf386b0079ac9.ctex"
+uid="uid://cu6cbhswnfegb"
+path="res://.godot/imported/Weapons.png-5f9f01ad67066e7a86b8b86da9a7f6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/TX Shadow Plant.png"
-dest_files=["res://.godot/imported/TX Shadow Plant.png-4701bc454f75d56554ecf386b0079ac9.ctex"]
+source_file="res://Assets/Weapons.png"
+dest_files=["res://.godot/imported/Weapons.png-5f9f01ad67066e7a86b8b86da9a7f6ab.ctex"]
 
 [params]
 
