@@ -11,12 +11,8 @@ var knockbackPower: int = 10
 @onready var hurtTimer = $hurtTimer
 @onready var reloadTimer = $RayCast2D/ReloadTimer
 var enemyBullet = preload("res://enemy_bullet.tscn")
-
-
-
+var seePlayer = false
 var target: Node2D = null
-
-
 var dead = false
 func _ready():
 	effects.play("RESET")
@@ -42,8 +38,7 @@ func _physics_process(delta):
 		shoot() 
 
 func kill():
-	if dead:
-		return
+	$".".queue_free()
 	dead = true
 	$Graphics/Alive.hide()
 	$HitBox.disabled = true
@@ -85,3 +80,8 @@ func shoot():
 
 
 
+
+
+func _on_detection_area_body_entered(body):
+	if body.is_in_group("Player"):
+		seePlayer = true

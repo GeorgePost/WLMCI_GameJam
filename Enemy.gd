@@ -8,6 +8,8 @@ var knockbackPower: int = 10
 @onready var effects = $Effects
 @onready var hurtTimer = $hurtTimer
 signal lostEnemy()
+var seePlayer = false
+
 var dead = false
 func _ready():
 	effects.play("RESET")
@@ -17,18 +19,17 @@ func _physics_process(delta):
 		return
 	
 	var dir_to_player = global_position.direction_to(player.global_position)
-	
-	velocity = dir_to_player * move_speed
+	if seePlayer:
+		velocity = dir_to_player * move_speed
 	move_and_slide()
-	
 	global_rotation = dir_to_player.angle() + PI/2.0
+	
 	
 	if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider() == player:
 		player.kill()
 
 func kill():
-	if dead:
-		return
+	$".".queue_free()
 	dead = true
 	emit_signal("lostEnemy")
 	$Graphics/Alive.hide()
@@ -55,4 +56,8 @@ func knockback():
 	var knockbackDirection = (velocity) * -knockbackPower
 	velocity = knockbackDirection
 	move_and_slide()
-	
+
+
+func _on_detection_area_body_entered(body):
+	if body.is_in_group("Player"):
+		seePlayer = true
