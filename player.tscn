@@ -161,7 +161,7 @@ offset_right = 32.5
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Restart
+text = "Restart Level
 "
 
 [node name="Camera2D" type="Camera2D" parent="."]

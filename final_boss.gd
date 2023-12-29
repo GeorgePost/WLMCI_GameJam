@@ -8,10 +8,11 @@ extends CharacterBody2D
 @onready var color_rect = $Alive/ColorRect
 @onready var hit_box = $HitBox
 @onready var collision_shape_2d = $HurtBox/CollisionShape2D
-
-
+@onready var enemy_scene1 = preload("res://enemy.tscn")
+@onready var enemy_scene2 = preload("res://enemy_future.tscn")
 @onready var dead = false
- 
+var randNumber = 0
+
 var health: = 100:
 	set(value):
 		health = value
@@ -65,3 +66,14 @@ func kill():
 	hit_box.disabled = true
 	collision_shape_2d.disabled = true
 	z_index = -1
+
+
+func _on_spawn_timer_timeout():
+	randNumber = randi_range(0,1)
+	var enemy
+	if randNumber == 0:
+		enemy = enemy_scene1.instantiate()
+	else:
+		enemy = enemy_scene2.instantiate()
+	enemy.position = Vector2(randf_range(global_position.x-200, global_position.x+200), randf_range(global_position.y-200, global_position.y+200))
+	get_tree().current_scene.add_child(enemy)
