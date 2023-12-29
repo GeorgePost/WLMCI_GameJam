@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var sword = $Weapon/Sword
 @onready var waterGun1 = $Weapon/WaterGun1
 @onready var weapon = $Weapon
-var weaponEquipped = "sword"
+var weaponEquipped = "gun"
 var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000
@@ -47,8 +47,8 @@ func _process(delta):
 			swing()
 
 func _physics_process(delta):
-	if bosses[Global.bossNum].dead == true:
-		transitionFunc()
+	#if bosses[Global.bossNum].dead == true:
+		#transitionFunc()
 	if dead:
 		return
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
