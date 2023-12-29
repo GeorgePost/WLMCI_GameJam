@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://3mn11lcn1g1w"]
+[gd_scene load_steps=15 format=3 uid="uid://3mn11lcn1g1w"]
 
 [ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_pbdd6"]
+[ext_resource type="Texture2D" uid="uid://c4rlixr03ufwl" path="res://Assets/Texture/PresentTexture.png" id="2_dsvpj"]
 [ext_resource type="Script" path="res://Door.gd" id="2_sbvng"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_msyif"]
 [ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="4_3wq6y"]
@@ -29,11 +30,32 @@ texture_region_size = Vector2i(32, 32)
 0:2/0/physics_layer_0/angular_velocity = 0.0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqt5c"]
+texture = ExtResource("2_dsvpj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.75, -10.75, -2.75, -16, 0.75, -16, 3.75, -16, 6.75, -12.75, 14, -8.25, 16, -2.5, 16, 11.5, 11, 14, 1, 16, -4.5, 16, -13.5, 13.5, -16, 8.5, -16, -9.5)
+
 [sub_resource type="TileSet" id="TileSet_xy0us"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_hlfyq")
+sources/1 = SubResource("TileSetAtlasSource_nqt5c")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6364j"]
 resource_local_to_scene = true
@@ -51,9 +73,18 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 0:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtdql"]
+texture = ExtResource("2_dsvpj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_ulgi0"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_mbvvd")
+sources/1 = SubResource("TileSetAtlasSource_vtdql")
 
 [node name="Level2" type="Node2D"]
 

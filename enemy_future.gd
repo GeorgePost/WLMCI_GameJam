@@ -39,6 +39,7 @@ func _physics_process(delta):
 
 
 func kill():
+	Global.enemies -= 1
 	$".".queue_free()
 	dead = true
 	$Graphics/Alive.hide()

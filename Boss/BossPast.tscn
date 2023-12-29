@@ -56,7 +56,7 @@ _data = {
 "hurtBlink": SubResource("Animation_mband")
 }
 
-[node name="Boss1" type="CharacterBody2D"]
+[node name="Boss1" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_jn4lr")
 
 [node name="Alive" type="Sprite2D" parent="."]

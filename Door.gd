@@ -5,12 +5,13 @@ var number_of_enemies
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	number_of_enemies = get_tree().get_nodes_in_group("Enemy").size()
+	Global.enemies = get_tree().get_nodes_in_group("Enemy").size()
 	hide(); #Hide the door
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(number_of_enemies==0):
+	if(number_of_enemies==0 || Global.enemies == 0):
 		show();
 
 
