@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
-
 @onready var ray_cast_2d = $RayCast2D
 @export var move_speed = 200
 @onready var animations = $AnimationPlayer
 @onready var sword = $Weapon/Sword
 @onready var waterGun1 = $Weapon/WaterGun1
 @onready var weapon = $Weapon
-var weaponEquipped = "sword"
+var weaponEquipped = "gun"
 var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000
 var fire_rate = 0.2
 var bullet = preload("res://Weapons/bullet.tscn")
+@onready var transition = $CanvasLayer/TransitionPanel
 var can_fire = true
 
 func _ready():
@@ -80,4 +80,9 @@ func shoot():
 	bullet_instance.rotation = move_direction.angle()
 
 func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	get_tree().change_scene_to_file("res://World.tscn")
+	if dead:
+		return
+	dead = true
+	transition.changeText("You have completed the first level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
+	transition.show()
+	z_index = -1

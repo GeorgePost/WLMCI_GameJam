@@ -10,6 +10,8 @@ func transition():
 	var xValue = abs(player.position.x-global_position.x)
 	var yValue = abs(player.position.y-global_position.y)
 	var readyShoot = xValue <= 350 && yValue <= 350
+	if owner.health <= 50:
+		get_parent().change_state("ExplosionShoot")
 	if not readyShoot:
 		if owner.health >= 50:
 			get_parent().change_state("Follow")
