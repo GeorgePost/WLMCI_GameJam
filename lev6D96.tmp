@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://dt3g5rruy5vug"]
+
+[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_o3edd"]
+[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="2_8fgdn"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="3_givfn"]
+[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="4_3383q"]
+[ext_resource type="Script" path="res://Door.gd" id="4_mhl3k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
+texture = ExtResource("1_o3edd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_xy0us"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_hlfyq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6364j"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/CaveTextures.png-5e2b61cc27a426927ce3bcc4f01c2f40.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u375"]
+size = Vector2(26.25, 24.6858)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbvvd"]
+texture = ExtResource("1_o3edd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ulgi0"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_mbvvd")
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_xy0us")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 65536, 1342177281, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 65536, 805306369, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 65536, 805306369, 327675, 0, 0, 327674, 0, 0, 327673, 0, 0, 327672, 0, 0, 327671, 0, 0, 262135, 0, 0, 196599, 0, 0, 131063, 0, 0, 65527, 65536, 1610612737, -9, 0, 0, -65545, 0, 0, -131081, 0, 0, -196617, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 1, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 65536, 1, -327676, 0, 0, -327675, 0, 0, -327673, 0, 0, -65531, 0, 0, 1, 0, 0, -262143, 0, 0, -5, 0, 0, -327674, 0, 0)
+
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(479, -223)
+scale = Vector2(2, 2)
+collision_mask = 3
+script = ExtResource("4_mhl3k")
+
+[node name="Sprite" type="Sprite2D" parent="Door"]
+texture = SubResource("CompressedTexture2D_6364j")
+hframes = 2
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0.125, 0.616852)
+scale = Vector2(1, 1.00326)
+shape = SubResource("RectangleShape2D_4u375")
+
+[node name="Player" parent="." instance=ExtResource("2_8fgdn")]
+move_speed = null
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player"]
+z_index = -1
+scale = Vector2(2.375, 2.375)
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("4_3383q")
+
+[node name="Enemy" parent="." instance=ExtResource("3_givfn")]
+position = Vector2(336, -141)
+scale = Vector2(1.69308, 1.69308)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_givfn")]
+position = Vector2(-320, -153)
+scale = Vector2(1.69308, 1.69308)
+
+[node name="Ground" type="TileMap" parent="."]
+z_index = -2
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_ulgi0")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262153, 0, 2, -196617, 0, 2, -131081, 0, 2, -65545, 0, 2, -9, 0, 2, 65527, 0, 2, 131063, 0, 2, 196599, 0, 2, 262135, 0, 2, 327671, 0, 2, -262152, 0, 2, -196616, 0, 2, -131080, 0, 2, -65544, 0, 2, -8, 0, 2, 65528, 0, 2, 131064, 0, 2, 196600, 0, 2, 262136, 0, 2, 327672, 0, 2, -262151, 0, 2, -196615, 0, 2, -131079, 0, 2, -65543, 0, 2, -7, 0, 2, 65529, 0, 2, 131065, 0, 2, 196601, 0, 2, 262137, 0, 2, 327673, 0, 2, -262150, 0, 2, -196614, 0, 2, -131078, 0, 2, -65542, 0, 2, -6, 0, 2, 65530, 0, 2, 131066, 0, 2, 196602, 0, 2, 262138, 0, 2, 327674, 0, 2, -262149, 0, 2, -196613, 0, 2, -131077, 0, 2, -65541, 0, 2, -5, 0, 2, 65531, 0, 2, 131067, 0, 2, 196603, 0, 2, 262139, 0, 2, 327675, 0, 2, -262148, 0, 2, -196612, 0, 2, -131076, 0, 2, -65540, 0, 2, -4, 0, 2, 65532, 0, 2, 131068, 0, 2, 196604, 0, 2, 262140, 0, 2, 327676, 0, 2, -262147, 0, 2, -196611, 0, 2, -131075, 0, 2, -65539, 0, 2, -3, 0, 2, 65533, 0, 2, 131069, 0, 2, 196605, 0, 2, 262141, 0, 2, 327677, 0, 2, -262146, 0, 2, -196610, 0, 2, -131074, 0, 2, -65538, 0, 2, -2, 0, 2, 65534, 0, 2, 131070, 0, 2, 196606, 0, 2, 262142, 0, 2, 327678, 0, 2, -262145, 0, 2, -196609, 0, 2, -131073, 0, 2, -65537, 0, 2, -1, 0, 2, 65535, 0, 2, 131071, 0, 2, 196607, 0, 2, 262143, 0, 2, 327679, 0, 2, -327680, 0, 2, -262144, 0, 2, -196608, 0, 2, -131072, 0, 2, -65536, 0, 2, 0, 0, 2, 65536, 0, 2, 131072, 0, 2, 196608, 0, 2, 262144, 0, 2, -327679, 0, 2, -262143, 0, 2, -196607, 0, 2, -131071, 0, 2, -65535, 0, 2, 1, 0, 2, 65537, 0, 2, 131073, 0, 2, 196609, 0, 2, 262145, 0, 2, -327678, 0, 2, -262142, 0, 2, -196606, 0, 2, -131070, 0, 2, -65534, 0, 2, 2, 0, 2, 65538, 0, 2, 131074, 0, 2, 196610, 0, 2, 262146, 0, 2, -327677, 0, 2, -262141, 0, 2, -196605, 0, 2, -131069, 0, 2, -65533, 0, 2, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 0, 2, 262147, 0, 2, -327676, 0, 2, -262140, 0, 2, -196604, 0, 2, -131068, 0, 2, -65532, 0, 2, 4, 0, 2, 65540, 0, 2, 131076, 0, 2, 196612, 0, 2, 262148, 0, 2, -327675, 0, 2, -262139, 0, 2, -196603, 0, 2, -131067, 0, 2, -65531, 0, 2, 5, 0, 2, 65541, 0, 2, 131077, 0, 2, 196613, 0, 2, 262149, 0, 2, -327674, 0, 2, -262138, 0, 2, -196602, 0, 2, -131066, 0, 2, -65530, 0, 2, 6, 0, 2, 65542, 0, 2, 131078, 0, 2, 196614, 0, 2, 262150, 0, 2, -327673, 0, 2, -262137, 0, 2, -196601, 0, 2, -131065, 0, 2, -65529, 0, 2, 7, 0, 2, 65543, 0, 2, 131079, 0, 2, 196615, 0, 2, 262151, 0, 2, -327672, 0, 2, -262136, 0, 2, -196600, 0, 2, -131064, 0, 2, -65528, 0, 2, 8, 0, 2, 65544, 0, 2, 131080, 0, 2, 196616, 0, 2, 262152, 0, 2)
+
+[connection signal="area_entered" from="Door" to="Player" method="_on_door_area_entered"]
+[connection signal="body_entered" from="Door" to="Player" method="_on_door_body_entered"]
+[connection signal="body_shape_entered" from="Door" to="Player" method="_on_door_body_shape_entered"]
+[connection signal="lostEnemy" from="Enemy" to="Door" method="_on_enemy_lost_enemy"]
+[connection signal="lostEnemy" from="Enemy2" to="Door" method="_on_enemy_lost_enemy"]

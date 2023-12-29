@@ -17,6 +17,7 @@ var bullet = preload("res://Weapons/bullet.tscn")
 var can_fire = true
 var vect = Vector2(0.0, -500.0)
 var bosses = [$"../Boss1", $"../Boss1", $"../FinalBoss"]
+var count = 1
 
 
 func _ready():
@@ -88,7 +89,8 @@ func shoot():
 	bullet_instance.rotation = move_direction.angle()
 
 func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	player.translate(vect)
+	get_tree().change_scene_to_file("res://level_" + str(count) + ".tscn") # Replace with function body.
+	count += 1
 	#if dead:
 		#return
 	#dead = true

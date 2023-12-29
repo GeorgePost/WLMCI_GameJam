@@ -4,7 +4,7 @@ var number_of_enemies
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	number_of_enemies=2;
+	number_of_enemies = get_tree().get_nodes_in_group("Enemy").size()
 	hide(); #Hide the door
 
 
