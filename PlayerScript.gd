@@ -47,8 +47,8 @@ func _process(delta):
 			swing()
 
 func _physics_process(delta):
-	if bosses[Global.bossNum].dead == true:
-		transitionFunc()
+	#if bosses[Global.bossNum].dead == true:
+		#transitionFunc()
 	if dead:
 		return
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
