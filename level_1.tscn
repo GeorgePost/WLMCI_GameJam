@@ -93,10 +93,6 @@ texture = ExtResource("4_3383q")
 position = Vector2(336, -141)
 scale = Vector2(1.69308, 1.69308)
 
-[node name="Enemy2" parent="." instance=ExtResource("3_givfn")]
-position = Vector2(-320, -153)
-scale = Vector2(1.69308, 1.69308)
-
 [node name="Ground" type="TileMap" parent="."]
 z_index = -2
 scale = Vector2(2, 2)
@@ -108,4 +104,3 @@ layer_0/tile_data = PackedInt32Array(-262153, 0, 2, -196617, 0, 2, -131081, 0, 2
 [connection signal="body_entered" from="Door" to="Player" method="_on_door_body_entered"]
 [connection signal="body_shape_entered" from="Door" to="Player" method="_on_door_body_shape_entered"]
 [connection signal="lostEnemy" from="Enemy" to="Door" method="_on_enemy_lost_enemy"]
-[connection signal="lostEnemy" from="Enemy2" to="Door" method="_on_enemy_lost_enemy"]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://3mn11lcn1g1w"]
+[gd_scene load_steps=15 format=3 uid="uid://bisy5igjqfm4t"]
 
-[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_pbdd6"]
-[ext_resource type="Script" path="res://Door.gd" id="2_sbvng"]
-[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_msyif"]
-[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="4_3wq6y"]
-[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="5_q0eof"]
+[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_xum5o"]
+[ext_resource type="Script" path="res://Door.gd" id="3_1dnoq"]
+[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="4_gxeyt"]
+[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="5_tbsin"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="6_fkstv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
-texture = ExtResource("1_pbdd6")
+texture = ExtResource("1_xum5o")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -67,7 +67,7 @@ load_path = "res://.godot/imported/CaveTextures.png-5e2b61cc27a426927ce3bcc4f01c
 size = Vector2(26.25, 24.6858)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbvvd"]
-texture = ExtResource("1_pbdd6")
+texture = ExtResource("1_xum5o")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -100,7 +100,7 @@ layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0
 position = Vector2(479, -223)
 scale = Vector2(2, 2)
 collision_mask = 3
-script = ExtResource("2_sbvng")
+script = ExtResource("3_1dnoq")
 
 [node name="Sprite" type="Sprite2D" parent="Door"]
 texture = SubResource("CompressedTexture2D_6364j")
@@ -113,21 +113,25 @@ position = Vector2(0.125, 0.616852)
 scale = Vector2(1, 1.00326)
 shape = SubResource("RectangleShape2D_4u375")
 
-[node name="Player" parent="." instance=ExtResource("3_msyif")]
+[node name="Player" parent="." instance=ExtResource("4_gxeyt")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player"]
 z_index = -1
 scale = Vector2(2.375, 2.375)
 blend_mode = 2
 shadow_enabled = true
-texture = ExtResource("4_3wq6y")
+texture = ExtResource("5_tbsin")
 
-[node name="Enemy" parent="." instance=ExtResource("5_q0eof")]
+[node name="Enemy" parent="." instance=ExtResource("6_fkstv")]
 position = Vector2(336, -141)
 scale = Vector2(1.69308, 1.69308)
 
-[node name="Enemy2" parent="." instance=ExtResource("5_q0eof")]
+[node name="Enemy2" parent="." instance=ExtResource("6_fkstv")]
 position = Vector2(-320, -153)
+scale = Vector2(1.69308, 1.69308)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_fkstv")]
+position = Vector2(316, 145)
 scale = Vector2(1.69308, 1.69308)
 
 [node name="Ground" type="TileMap" parent="."]
@@ -142,3 +146,4 @@ layer_0/tile_data = PackedInt32Array(-262153, 0, 2, -196617, 0, 2, -131081, 0, 2
 [connection signal="body_shape_entered" from="Door" to="Player" method="_on_door_body_shape_entered"]
 [connection signal="lostEnemy" from="Enemy" to="Door" method="_on_enemy_lost_enemy"]
 [connection signal="lostEnemy" from="Enemy2" to="Door" method="_on_enemy_lost_enemy"]
+[connection signal="lostEnemy" from="Enemy3" to="Door" method="_on_enemy_lost_enemy"]
