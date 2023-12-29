@@ -1,5 +1,5 @@
 extends State
-class_name ShootState
+#class_name ShootState
 
 @export var enemy_bullet_node : PackedScene 
 @onready var timer = $Timer

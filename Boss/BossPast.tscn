@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxf7k6uja88kj"]
+[gd_scene load_steps=14 format=3 uid="uid://cxf7k6uja88kj"]
 
 [ext_resource type="Script" path="res://Boss/BossPast.gd" id="1_jn4lr"]
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_4ao5k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Boss/Shoot.gd" id="5_5cptx"]
 [ext_resource type="Script" path="res://Boss/Follow.gd" id="6_75se0"]
 [ext_resource type="Script" path="res://Boss/Dash.gd" id="7_4otdd"]
+[ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="8_yhql7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ofmv"]
 radius = 39.4588
@@ -135,6 +136,9 @@ offset_right = 50.0
 offset_bottom = -45.0
 value = 100.0
 show_percentage = false
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_yhql7")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]

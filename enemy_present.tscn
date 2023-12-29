@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b20poguirk4rv"]
+[gd_scene load_steps=13 format=3 uid="uid://b20poguirk4rv"]
 
 [ext_resource type="Script" path="res://enemy_future.gd" id="1_mm7te"]
 [ext_resource type="PackedScene" uid="uid://bqbafpwwqrdfj" path="res://enemy_bullet.tscn" id="2_45yfi"]
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="3_n4xh0"]
 [ext_resource type="Texture2D" uid="uid://c5iepdx03ldfk" path="res://Assets/WaterGuns.png" id="4_idw6w"]
+[ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="5_quovl"]
+[ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="6_sk7gh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmpcc"]
 radius = 12.0416
@@ -123,6 +125,12 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_gof8u")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_quovl")
+
+[node name="Gun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_sk7gh")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

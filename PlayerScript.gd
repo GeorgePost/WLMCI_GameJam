@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var sword = $Weapon/Sword
 @onready var waterGun1 = $Weapon/WaterGun1
 @onready var weapon = $Weapon
-var weaponEquipped = "gun"
+var weaponEquipped = "sword"
 var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000
@@ -50,6 +50,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func swing():
+	$Swing.play()
 	animations.play("AttackDown")
 	isAttacking = true
 	weapon.enable()
@@ -62,7 +63,7 @@ func kill():
 	if dead:
 		return
 	dead = true
-
+	$Death.play()
 	$Graphics/Alive.hide()
 	$CanvasLayer/Deathscreen.show()
 	z_index = -1
@@ -71,6 +72,7 @@ func restart():
 	get_tree().reload_current_scene()
 
 func shoot():
+	$Laser.play()
 	var bullet_instance = bullet.instantiate() 
 	get_tree().root.add_child(bullet_instance)
 	

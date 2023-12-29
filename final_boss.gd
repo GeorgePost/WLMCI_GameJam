@@ -46,6 +46,7 @@ func _input(event):
 		
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
+		$Hit.play()
 		if area == $HitBox: return
 		if player.weaponEquipped == "sword":
 			health -= 51

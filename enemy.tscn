@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://lw87ntxtx7jg"]
+[gd_scene load_steps=10 format=3 uid="uid://lw87ntxtx7jg"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_mdg8n"]
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_qv6bu"]
+[ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="3_c0sav"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypfhb"]
 radius = 12.0416
@@ -104,6 +105,9 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_jjcbf")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c0sav")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

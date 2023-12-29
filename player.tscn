@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmy0qi4oomrup"]
+[gd_scene load_steps=16 format=3 uid="uid://bmy0qi4oomrup"]
 
 [ext_resource type="Script" path="res://PlayerScript.gd" id="1_pq5u1"]
 [ext_resource type="Texture2D" uid="uid://i5lu7ex1gdr7" path="res://Assets/character.png" id="2_oiu63"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://15tfw13d4w28" path="res://transition_panel.tscn" id="4_vd0la"]
 [ext_resource type="PackedScene" uid="uid://ceuthu25iiu5x" path="res://Weapons/water_gun_1.tscn" id="6_oiqa0"]
 [ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="7_sre5r"]
+[ext_resource type="AudioStream" uid="uid://bbvrv2ec25gdm" path="res://Assets/Sounds/CharacterDeath.wav" id="9_8a7ok"]
+[ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="10_eht7b"]
+[ext_resource type="AudioStream" uid="uid://qrfdo8413em" path="res://Assets/Sounds/Swing.wav" id="11_og1gq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cufxn"]
 radius = 65.0077
@@ -192,6 +195,15 @@ scale = Vector2(2.375, 2.375)
 blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("7_sre5r")
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8a7ok")
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_eht7b")
+
+[node name="Swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_og1gq")
 
 [connection signal="timeout" from="MuzzleFlash/Timer" to="MuzzleFlash" method="hide"]
 [connection signal="button_up" from="CanvasLayer/Deathscreen/Panel/Button" to="." method="restart"]

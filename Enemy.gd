@@ -40,6 +40,7 @@ func kill():
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet") || area.is_in_group("Sword"):
+		$Hit.play()
 		if area == $HitBox: return
 		if player.weaponEquipped == "sword":
 			health -= 20

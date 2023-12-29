@@ -34,6 +34,7 @@ func _on_area_entered(area):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
+		$Explosion2.play()
 		sprite_2d_2.visible = false
 		explosionShape.visible = true
 		animation_player.play("Explosion")
@@ -44,6 +45,7 @@ func _on_body_entered(body):
 	destroy()
 
 func _on_timer_timeout():
+	$Explosion2.play()
 	sprite_2d_2.visible = false
 	explosionShape.visible = true
 	animation_player.play("Explosion")

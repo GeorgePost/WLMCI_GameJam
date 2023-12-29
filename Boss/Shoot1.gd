@@ -37,6 +37,7 @@ func _on_timer_timeout():
 func shoot():
 	if Boss1.dead:
 		return
+	$"../../Shoot".play()
 	var bullet = enemyBullet.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = global_position

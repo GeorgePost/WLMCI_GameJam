@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5kxjxekgmel7"]
+[gd_scene load_steps=18 format=3 uid="uid://b5kxjxekgmel7"]
 
 [ext_resource type="Script" path="res://final_boss.gd" id="1_7gdm2"]
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_1eh4r"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://Boss/Follow.gd" id="6_1py1c"]
 [ext_resource type="Script" path="res://ExplosionShoot.gd" id="6_cxvv3"]
 [ext_resource type="Script" path="res://Boss/Dash.gd" id="7_on1xc"]
+[ext_resource type="AudioStream" uid="uid://dvc5ocjroeqmg" path="res://Assets/Sounds/Explosion.wav" id="9_fhkei"]
+[ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="10_ceuul"]
+[ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="11_gjefl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7nedn"]
 radius = 40.1123
@@ -152,6 +155,15 @@ metadata/_edit_use_anchors_ = true
 wait_time = 4096.0
 one_shot = true
 autostart = true
+
+[node name="Bomb" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_fhkei")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ceuul")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gjefl")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]

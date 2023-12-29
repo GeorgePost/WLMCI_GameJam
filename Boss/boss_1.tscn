@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d14iejt6m78bi"]
+[gd_scene load_steps=16 format=3 uid="uid://d14iejt6m78bi"]
 
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="1_g4451"]
 [ext_resource type="Script" path="res://Boss/boss_1.gd" id="1_nmtgf"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Boss/Shoot1.gd" id="5_vwmcl"]
 [ext_resource type="Script" path="res://Boss/Follow.gd" id="6_gero5"]
 [ext_resource type="Script" path="res://Boss/Dash.gd" id="7_mvs65"]
+[ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="8_oc1bh"]
+[ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="9_r5jy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd1n"]
 size = Vector2(80, 78)
@@ -140,6 +142,12 @@ offset_bottom = -42.0
 value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_oc1bh")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_r5jy2")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]

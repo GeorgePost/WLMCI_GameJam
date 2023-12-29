@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://207cran3xvhi"]
+[gd_scene load_steps=7 format=3 uid="uid://207cran3xvhi"]
 
 [ext_resource type="Texture2D" uid="uid://ds1x7h8k5jaqm" path="res://Assets/Texture/TX Tileset Grass.png" id="1_kp0q7"]
 [ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_xuvdj"]
-[ext_resource type="PackedScene" uid="uid://b5kxjxekgmel7" path="res://final_boss.tscn" id="5_1mmtn"]
+[ext_resource type="PackedScene" uid="uid://b5p5e3u3xnfvj" path="res://enemy_future.tscn" id="4_1iywm"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="4_xuc4v"]
+[ext_resource type="PackedScene" uid="uid://b20poguirk4rv" path="res://enemy_present.tscn" id="5_ji4ff"]
 
 [sub_resource type="TileSet" id="TileSet_duh5j"]
 tile_size = Vector2i(32, 32)
@@ -26,5 +28,11 @@ layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0
 
 [node name="Player" parent="." instance=ExtResource("3_xuvdj")]
 
-[node name="FinalBoss" parent="." instance=ExtResource("5_1mmtn")]
-position = Vector2(-486, 13)
+[node name="Enemy" parent="." instance=ExtResource("4_xuc4v")]
+position = Vector2(-467, -14)
+
+[node name="EnemyPresent" parent="." instance=ExtResource("5_ji4ff")]
+position = Vector2(-540, -189)
+
+[node name="EnemyFuture" parent="." instance=ExtResource("4_1iywm")]
+position = Vector2(-396, 217)

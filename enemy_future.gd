@@ -35,7 +35,8 @@ func _physics_process(delta):
 	
 
 	if reloadTimer.is_stopped():
-		shoot() 
+		shoot()
+
 
 func kill():
 	$".".queue_free()
@@ -47,7 +48,8 @@ func kill():
 
 
 func _on_hurt_box_area_entered(area):
-	if area.is_in_group("PlayerBullet"):
+	if area.is_in_group("PlayerBullet") || area.is_in_group("Sword"):
+		$Hit.play()
 		if area == $HitBox: return
 		if player.weaponEquipped == "sword":
 			health -= 20
@@ -69,6 +71,8 @@ func _on_ReloadTimer_timeout():
 	ray_cast_2d.enabled = true
 
 func shoot():
+	if !player.dead:
+		$Gun.play()
 	ray_cast_2d.enabled = false
 	
 	var bullet = enemyBullet.instantiate()
