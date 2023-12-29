@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxf7k6uja88kj"]
+[gd_scene load_steps=14 format=3 uid="uid://b5kxjxekgmel7"]
 
-[ext_resource type="Script" path="res://Boss/BossPast.gd" id="1_jn4lr"]
-[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_4ao5k"]
-[ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="3_bkef7"]
-[ext_resource type="Script" path="res://Boss/Idle.gd" id="4_w25es"]
-[ext_resource type="Script" path="res://Boss/Shoot.gd" id="5_5cptx"]
-[ext_resource type="Script" path="res://Boss/Follow.gd" id="6_75se0"]
-[ext_resource type="Script" path="res://Boss/Dash.gd" id="7_4otdd"]
+[ext_resource type="Script" path="res://final_boss.gd" id="1_7gdm2"]
+[ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_1eh4r"]
+[ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="3_tgmos"]
+[ext_resource type="Script" path="res://Boss/Idle.gd" id="4_1m3kx"]
+[ext_resource type="Script" path="res://Shoot2.gd" id="5_6isvt"]
+[ext_resource type="Script" path="res://Boss/Follow.gd" id="6_1py1c"]
+[ext_resource type="Script" path="res://ExplosionShoot.gd" id="6_cxvv3"]
+[ext_resource type="Script" path="res://Boss/Dash.gd" id="7_on1xc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7ofmv"]
-radius = 39.4588
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd1n"]
+size = Vector2(80, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eq58f"]
 size = Vector2(82, 80)
@@ -54,15 +55,15 @@ _data = {
 "hurtBlink": SubResource("Animation_mband")
 }
 
-[node name="Boss1" type="CharacterBody2D"]
-script = ExtResource("1_jn4lr")
+[node name="FinalBoss" type="CharacterBody2D"]
+script = ExtResource("1_7gdm2")
 
 [node name="Alive" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.45161, 2.45161)
-texture = ExtResource("2_4ao5k")
+texture = ExtResource("2_1eh4r")
 region_enabled = true
-region_rect = Rect2(32.0004, 0.1607, 31.8391, 32.0785)
+region_rect = Rect2(0.268723, 0.1607, 31.4854, 31.703)
 
 [node name="ColorRect" type="ColorRect" parent="Alive"]
 clip_children = 2
@@ -74,7 +75,7 @@ color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7ofmv")
+shape = SubResource("RectangleShape2D_1yd1n")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
@@ -84,35 +85,40 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_eq58f")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(1, -198)
+target_position = Vector2(-1, 259)
 collision_mask = 6
 
 [node name="debug" type="Label" parent="."]
-visible = false
 offset_left = -20.0
 offset_top = -61.0
 offset_right = 20.0
 offset_bottom = -38.0
 text = "Test"
+metadata/_edit_use_anchors_ = true
 
 [node name="FiniteStateMachine" type="Node2D" parent="."]
-visible = false
-script = ExtResource("3_bkef7")
+script = ExtResource("3_tgmos")
 
 [node name="Idle" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("4_w25es")
+script = ExtResource("4_1m3kx")
 
 [node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("5_5cptx")
+script = ExtResource("5_6isvt")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
-wait_time = 3.0
+wait_time = 0.75
+
+[node name="ExplosionShoot" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_cxvv3")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/ExplosionShoot"]
+wait_time = 0.75
 
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("6_75se0")
+script = ExtResource("6_1py1c")
 
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("7_4otdd")
+script = ExtResource("7_on1xc")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Dash"]
 wait_time = 1.5
@@ -130,13 +136,20 @@ one_shot = true
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(100, 0)
 offset_left = -50.0
-offset_top = -72.0
+offset_top = -86.0
 offset_right = 50.0
-offset_bottom = -45.0
+offset_bottom = -59.0
 value = 100.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="FiniteStateMachine/Shoot/Timer" to="FiniteStateMachine/Shoot" method="_on_timer_timeout"]
+[connection signal="timeout" from="FiniteStateMachine/ExplosionShoot/Timer" to="FiniteStateMachine/ExplosionShoot" method="_on_timer_timeout"]
 [connection signal="timeout" from="FiniteStateMachine/Dash/Timer" to="FiniteStateMachine/Dash" method="_on_timer_timeout"]
 [connection signal="timeout" from="hurtTimer" to="." method="_on_hurt_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

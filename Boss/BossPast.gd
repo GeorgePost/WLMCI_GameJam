@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var hit_box = $HitBox
 @onready var collision_shape_2d = $HurtBox/CollisionShape2D
 @onready var dir_to_player = global_position.direction_to(player.global_position)
+@onready var dis_to_player = global_position.distance_to(player.global_position)
 
 @onready var dead = false
  
@@ -45,7 +46,7 @@ func _input(event):
 		health -= 1
 		
 func _on_hurt_box_area_entered(area):
-	if area.is_in_group("PlayerBullet"):
+	if area.is_in_group("PlayerBullet") || area.is_in_group("Sword"):
 		if area == $HitBox: return
 		if player.weaponEquipped == "sword":
 			health -= 51

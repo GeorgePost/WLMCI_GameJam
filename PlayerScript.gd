@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var sword = $Weapon/Sword
 @onready var waterGun1 = $Weapon/WaterGun1
 @onready var weapon = $Weapon
-var weaponEquipped = "gun"
+var weaponEquipped = "sword"
 var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000

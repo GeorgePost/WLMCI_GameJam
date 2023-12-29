@@ -19,13 +19,16 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_area_entered(area):
 	print("area")
+	destroy()
 	if area.is_in_group("Player"):
 		print("movement")
 		destroy()
 
 
 func _on_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") :
 			destroy()
 			player.kill()
+	elif body.is_in_group("Sword"):
+		destroy()
 	destroy()
