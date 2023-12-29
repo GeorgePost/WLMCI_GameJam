@@ -18,6 +18,9 @@ radius = 40.1123
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eq58f"]
 size = Vector2(82, 80)
 
+[sub_resource type="Animation" id="Animation_ko0it"]
+resource_name = "Explosion"
+
 [sub_resource type="Animation" id="Animation_wojk3"]
 resource_name = "RESET"
 length = 0.3
@@ -51,9 +54,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 0, 0, 0.713726), Color(1, 1, 1, 0.352941), Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_ko0it"]
-resource_name = "Explosion"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q4dsh"]
 _data = {

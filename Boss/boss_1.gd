@@ -60,7 +60,7 @@ func _on_hurt_box_area_entered(area):
 		color_rect.visible = false
 
 func kill():
-	$".".queue_free()
+	#$".".queue_free()
 	dead = true
 	$Alive.hide()
 	hit_box.disabled = true

@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var dir_to_player = global_position.direction_to(player.global_position)
 @onready var dis_to_player = global_position.distance_to(player.global_position)
 
-@onready var dead = false
+@export var dead = false
  
 var health: = 100:
 	set(value):
@@ -62,7 +62,7 @@ func _on_hurt_box_area_entered(area):
 		color_rect.visible = false
 
 func kill():
-	$".".queue_free()
+	#$".".queue_free()
 	dead = true
 	$Alive.hide()
 	hit_box.disabled = true

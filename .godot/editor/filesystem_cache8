@@ -1,31 +1,31 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703826215
+::res://::1703860471
 BossBulletPast.tscn::PackedScene::3327410173303847452::1703822204::0::1::::<><>::res://EnemyBullet.gd<>uid://c2mp8xgjvu1qg::::res://Assets/Boulder.png
 CharacterBody2D.gd::GDScript::-1::1703794733::0::1::::<>CharacterBody2D<>::
 Door.gd::GDScript::-1::1703797838::0::1::::<>Area2D<>::
-Enemy.gd::GDScript::-1::1703822468::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::819555110000103488::1703826175::0::1::::<><>::res://Enemy.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png
+Enemy.gd::GDScript::-1::1703828385::0::1::::<>CharacterBody2D<>::
+enemy.tscn::PackedScene::819555110000103488::1703828385::0::1::::<><>::res://Enemy.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav
 EnemyBullet.gd::GDScript::-1::1703821877::0::1::::EnemyBulletFuture<>Area2D<>::
-enemy_bullet.tscn::PackedScene::3511516311482785287::1703826175::0::1::::<><>::res://EnemyBullet.gd
-enemy_future.gd::GDScript::-1::1703796073::0::1::::<>CharacterBody2D<>::
-enemy_future.tscn::PackedScene::4524881814956920127::1703818851::0::1::::<><>::uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://enemy_future.gd<>uid://bqbafpwwqrdfj::::res://enemy_bullet.tscn<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
-enemy_present.tscn::PackedScene::4334065008200452779::1703802758::0::1::::<><>::res://enemy_future.gd<>uid://bqbafpwwqrdfj::::res://enemy_bullet.tscn<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>uid://c5iepdx03ldfk::::res://Assets/WaterGuns.png
-ExplosionBullet.gd::GDScript::-1::1703826137::0::1::::EnemyBulletExplosion<>Area2D<>::
-ExplosionShoot.gd::GDScript::-1::1703819529::0::1::::ShootState<>State<>::
-explosion_bullet.tscn::PackedScene::8164559393555405410::1703826176::0::1::::<><>::res://ExplosionBullet.gd<>uid://baoi6n6ttc3e8::::res://Assets/bomb.png<>uid://bqrkva7x5abfh::::res://Assets/explosion-6.png
-final_boss.gd::GDScript::-1::1703826215::0::1::::<>CharacterBody2D<>::
-final_boss.tscn::PackedScene::4514143548032562982::1703826215::0::1::::<><>::res://final_boss.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Shoot2.gd<>res://Boss/Follow.gd<>res://ExplosionShoot.gd<>res://Boss/Dash.gd
-level_1.tscn::PackedScene::8551071453189950002::1703826176::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>res://Door.gd
-menu.gd::GDScript::-1::1703825778::0::1::::<>Control<>::
-menu.tscn::PackedScene::400222257420965804::1703826176::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Assets/Menu Background.png
-player.tscn::PackedScene::3279778836609990075::1703826175::0::1::::<><>::res://PlayerScript.gd<>uid://i5lu7ex1gdr7::::res://Assets/character.png<>uid://d2x0iiknbmqmr::::res://Assets/muzzle_flash.png<>uid://3qto1rm1c1xg::::res://Weapons/sword.tscn<>res://Weapons/Weapon.gd<>uid://15tfw13d4w28::::res://transition_panel.tscn<>uid://ceuthu25iiu5x::::res://Weapons/water_gun_1.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png
-PlayerScript.gd::GDScript::-1::1703825577::0::1::::<>CharacterBody2D<>::
+enemy_bullet.tscn::PackedScene::3511516311482785287::1703828333::0::1::::<><>::res://EnemyBullet.gd
+enemy_future.gd::GDScript::-1::1703829507::0::1::::<>CharacterBody2D<>::
+enemy_future.tscn::PackedScene::4524881814956920127::1703829531::0::1::::<><>::uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://enemy_future.gd<>uid://bqbafpwwqrdfj::::res://enemy_bullet.tscn<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav
+enemy_present.tscn::PackedScene::4334065008200452779::1703829531::0::1::::<><>::res://enemy_future.gd<>uid://bqbafpwwqrdfj::::res://enemy_bullet.tscn<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>uid://c5iepdx03ldfk::::res://Assets/WaterGuns.png<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav
+ExplosionBullet.gd::GDScript::-1::1703828333::0::1::::EnemyBulletExplosion<>Area2D<>::
+ExplosionShoot.gd::GDScript::-1::1703828669::0::1::::<>State<>::
+explosion_bullet.tscn::PackedScene::8164559393555405410::1703829531::0::1::::<><>::res://ExplosionBullet.gd<>uid://baoi6n6ttc3e8::::res://Assets/bomb.png<>uid://bqrkva7x5abfh::::res://Assets/explosion-6.png<>uid://dvc5ocjroeqmg::::res://Assets/Sounds/Explosion.wav
+final_boss.gd::GDScript::-1::1703828246::0::1::::<>CharacterBody2D<>::
+final_boss.tscn::PackedScene::4514143548032562982::1703828333::0::1::::<><>::res://final_boss.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Shoot2.gd<>res://Boss/Follow.gd<>res://ExplosionShoot.gd<>res://Boss/Dash.gd<>uid://dvc5ocjroeqmg::::res://Assets/Sounds/Explosion.wav<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav
+level_1.tscn::PackedScene::8551071453189950002::1703829531::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>res://Door.gd
+menu.gd::GDScript::-1::1703828643::0::1::::<>Control<>::
+menu.tscn::PackedScene::400222257420965804::1703829531::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Assets/Menu Background.png<>uid://dbpohk275xkgx::::res://Assets/Sounds/TitleScreen.mp3
+player.tscn::PackedScene::3279778836609990075::1703828333::0::1::::<><>::res://PlayerScript.gd<>uid://i5lu7ex1gdr7::::res://Assets/character.png<>uid://d2x0iiknbmqmr::::res://Assets/muzzle_flash.png<>uid://3qto1rm1c1xg::::res://Weapons/sword.tscn<>res://Weapons/Weapon.gd<>uid://15tfw13d4w28::::res://transition_panel.tscn<>uid://ceuthu25iiu5x::::res://Weapons/water_gun_1.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://bbvrv2ec25gdm::::res://Assets/Sounds/CharacterDeath.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav<>uid://qrfdo8413em::::res://Assets/Sounds/Swing.wav
+PlayerScript.gd::GDScript::-1::1703828796::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1703794733::0::1::::<><>::
-Shoot2.gd::GDScript::-1::1703826172::0::1::::<>State<>::
+Shoot2.gd::GDScript::-1::1703828246::0::1::::<>State<>::
 Sprite2D.gd::GDScript::-1::1703794733::0::1::::<>Sprite2D<>::
 TransitionPanel.gd::GDScript::-1::1703824834::0::1::::<>Control<>::
-transition_panel.tscn::PackedScene::1888005015998707623::1703826176::0::1::::<><>::res://TransitionPanel.gd
-World.tscn::PackedScene::1948655630960664290::1703826175::0::1::::<><>::uid://ds1x7h8k5jaqm::::res://Assets/Texture/TX Tileset Grass.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://b5kxjxekgmel7::::res://final_boss.tscn
+transition_panel.tscn::PackedScene::1888005015998707623::1703829531::0::1::::<><>::res://TransitionPanel.gd
+World.tscn::PackedScene::1948655630960664290::1703829531::0::1::::<><>::uid://ds1x7h8k5jaqm::::res://Assets/Texture/TX Tileset Grass.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn<>uid://b20poguirk4rv::::res://enemy_present.tscn
 ::res://Assets/::1703826864
 bomb.png::CompressedTexture2D::2415863799384384761::1703819338::1703819349::1::::<><>::
 Boulder.png::CompressedTexture2D::6693683582495830686::1703796622::1703796622::1::::<><>::
@@ -59,24 +59,24 @@ TX Struct.png::CompressedTexture2D::8134116282141141887::1703794733::1703794775:
 TX Tileset Grass.png::CompressedTexture2D::8477789113544820948::1703794733::1703794775::1::::<><>::
 TX Tileset Stone Ground.png::CompressedTexture2D::8905625486450070460::1703794733::1703794775::1::::<><>::
 TX Tileset Wall.png::CompressedTexture2D::1102048623919333439::1703794733::1703794775::1::::<><>::
-::res://Boss/::1703826175
-BossPast.gd::GDScript::-1::1703822487::0::1::::<>CharacterBody2D<>::
-BossPast.tscn::PackedScene::6399469121069018761::1703826175::0::1::::<><>::res://Boss/BossPast.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd
-boss_1.gd::GDScript::-1::1703822361::0::1::::<>CharacterBody2D<>::
-boss_1.tscn::PackedScene::9044532323140895246::1703822288::0::1::::<><>::uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/boss_1.gd<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot1.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd
+::res://Boss/::1703829531
+BossPast.gd::GDScript::-1::1703828111::0::1::::<>CharacterBody2D<>::
+BossPast.tscn::PackedScene::6399469121069018761::1703828333::0::1::::<><>::res://Boss/BossPast.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav
+boss_1.gd::GDScript::-1::1703828603::0::1::::<>CharacterBody2D<>::
+boss_1.tscn::PackedScene::9044532323140895246::1703829531::0::1::::<><>::uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/boss_1.gd<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot1.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav
 Dash.gd::GDScript::-1::1703818741::0::1::::DashState<>State<>::
 FiniteStateMachine.gd::GDScript::-1::1703794733::0::1::::FiniteStateMachine<>Node2D<>::
 Follow.gd::GDScript::-1::1703805654::0::1::::FollowState<>State<>::
 Idle.gd::GDScript::-1::1703794733::0::1::::IdleState<>State<>::
-Shoot1.gd::GDScript::-1::1703805947::0::1::::ShootState<>State<>::
+Shoot1.gd::GDScript::-1::1703828603::0::1::::ShootState<>State<>::
 Shoot.gd::GDScript::-1::1703805654::0::1::::Shoot1State<>State<>::
 state.gd::GDScript::-1::1703805246::0::1::::State<>Node2D<>::
-::res://Weapons/::1703826175
+::res://Weapons/::1703829531
 bullet.gd::GDScript::-1::1703796121::0::1::::Bullet<>Area2D<>::
 bullet.tscn::PackedScene::5455584555007413114::1703802758::0::1::::<><>::res://Weapons/bullet.gd
 stick.tscn::PackedScene::4839139953783477336::1703794733::0::1::::<><>::res://Weapons/sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
 sword.gd::GDScript::-1::1703794733::0::1::::<>Area2D<>::
-sword.tscn::PackedScene::1999497682355952620::1703826175::0::1::::<><>::res://Weapons/sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
+sword.tscn::PackedScene::1999497682355952620::1703829531::0::1::::<><>::res://Weapons/sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
 upgraded_stick.tscn::PackedScene::8356339673607074963::1703794733::0::1::::<><>::res://Weapons/sword.gd<>uid://bpsrt7o4dujgx::::res://Assets/Weapons1.png
 water_gun_1.tscn::PackedScene::5096051513990238371::1703794733::0::1::::<><>::uid://c5iepdx03ldfk::::res://Assets/WaterGuns.png
 Weapon.gd::GDScript::-1::1703794733::0::1::::<>Node2D<>::

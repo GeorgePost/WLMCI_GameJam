@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var player = $"."
 @onready var ray_cast_2d = $RayCast2D
 @export var move_speed = 200
 @onready var animations = $AnimationPlayer
@@ -14,6 +15,9 @@ var fire_rate = 0.2
 var bullet = preload("res://Weapons/bullet.tscn")
 @onready var transition = $CanvasLayer/TransitionPanel
 var can_fire = true
+var vect = Vector2(0.0, -500.0)
+var bosses = [$"../Boss1", $"../Boss1", $"../FinalBoss"]
+
 
 func _ready():
 	animations.play("RESET")
@@ -43,6 +47,8 @@ func _process(delta):
 			swing()
 
 func _physics_process(delta):
+	if bosses[Global.bossNum].dead == true:
+		transitionFunc()
 	if dead:
 		return
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -82,9 +88,24 @@ func shoot():
 	bullet_instance.rotation = move_direction.angle()
 
 func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	player.translate(vect)
+	#if dead:
+		#return
+	#dead = true
+	#transition.changeText("You have completed the first level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
+	#transition.show()
+	#z_index = -1
+
+func transitionFunc():
 	if dead:
 		return
 	dead = true
-	transition.changeText("You have completed the first level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
+	if Global.bossNum == 0:
+		transition.changeText("You have completed the first level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
+	elif Global.bossNum == 1:
+		transition.changeText("You have completed the second level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
+	elif Global.bossNum == 2:
+		transition.changeText("You have completed the game!\nCongratulations Idk sadhasoh iuhfsualdhfl")
 	transition.show()
+	Global.bossNum += 1
 	z_index = -1
