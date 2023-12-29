@@ -16,5 +16,8 @@ func _process(delta):
 
 
 func _on_enemy_lost_enemy():
-	print("enemy dead")
 	number_of_enemies-=1 # Replace with function body.
+
+
+func _on_boss_1_lost_enemy():
+	number_of_enemies-=1

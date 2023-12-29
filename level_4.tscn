@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bisy5igjqfm4t"]
+[gd_scene load_steps=15 format=3 uid="uid://dr6p10rx34yq6"]
 
-[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_xum5o"]
-[ext_resource type="Script" path="res://Door.gd" id="3_1dnoq"]
-[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="4_gxeyt"]
-[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="5_tbsin"]
-[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="6_fkstv"]
+[ext_resource type="Texture2D" uid="uid://bqcjyqidi3gcm" path="res://Assets/Texture/CaveTextures.png" id="1_3so7m"]
+[ext_resource type="Script" path="res://Door.gd" id="2_ngoi3"]
+[ext_resource type="PackedScene" uid="uid://bmy0qi4oomrup" path="res://player.tscn" id="3_yhfp8"]
+[ext_resource type="Texture2D" uid="uid://1rvdhhdl14mq" path="res://Assets/Spotlight.png" id="4_wf5gs"]
+[ext_resource type="PackedScene" uid="uid://lw87ntxtx7jg" path="res://enemy.tscn" id="5_je4ve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlfyq"]
-texture = ExtResource("1_xum5o")
+texture = ExtResource("1_3so7m")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -30,7 +30,6 @@ texture_region_size = Vector2i(32, 32)
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_duv07"]
-load_path = "res://.godot/imported/PresentTexture.png-55a669aedf86dfdc73a3f102c3a96bec.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqt5c"]
 texture = SubResource("CompressedTexture2D_duv07")
@@ -67,7 +66,7 @@ load_path = "res://.godot/imported/CaveTextures.png-5e2b61cc27a426927ce3bcc4f01c
 size = Vector2(26.25, 24.6858)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbvvd"]
-texture = ExtResource("1_xum5o")
+texture = ExtResource("1_3so7m")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -88,19 +87,19 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_mbvvd")
 sources/1 = SubResource("TileSetAtlasSource_vtdql")
 
-[node name="Level3" type="Node2D"]
+[node name="level4" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_xy0us")
 format = 2
-layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 65536, 1342177281, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 65536, 805306369, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 65536, 805306369, 327675, 0, 0, 327674, 0, 0, 327673, 0, 0, 327672, 0, 0, 327671, 0, 0, 262135, 0, 0, 196599, 0, 0, 131063, 0, 0, 65527, 65536, 1610612737, -9, 0, 0, -65545, 0, 0, -131081, 0, 0, -196617, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 1, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 65536, 1, -327676, 0, 0, -327675, 0, 0, -327673, 0, 0, -65531, 0, 0, -5, 0, 0, -327674, 0, 0, -262143, 0, 0)
+layer_0/tile_data = PackedInt32Array(-327672, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 65536, 1342177281, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 65536, 805306369, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 65536, 805306369, 327675, 0, 0, 327674, 0, 0, 327673, 0, 0, 327672, 0, 0, 327671, 0, 0, 262135, 0, 0, 196599, 0, 0, 131063, 0, 0, 65527, 65536, 1610612737, -9, 0, 0, -65545, 0, 0, -131081, 0, 0, -196617, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 1, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 65536, 1, -327676, 0, 0, -327675, 0, 0, -327673, 0, 0, -5, 0, 0, -327674, 0, 0)
 
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(479, -223)
 scale = Vector2(2, 2)
 collision_mask = 3
-script = ExtResource("3_1dnoq")
+script = ExtResource("2_ngoi3")
 
 [node name="Sprite" type="Sprite2D" parent="Door"]
 texture = SubResource("CompressedTexture2D_6364j")
@@ -113,25 +112,29 @@ position = Vector2(0.125, 0.616852)
 scale = Vector2(1, 1.00326)
 shape = SubResource("RectangleShape2D_4u375")
 
-[node name="Player" parent="." instance=ExtResource("4_gxeyt")]
+[node name="Player" parent="." instance=ExtResource("3_yhfp8")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player"]
 z_index = -1
 scale = Vector2(2.375, 2.375)
 blend_mode = 2
 shadow_enabled = true
-texture = ExtResource("5_tbsin")
+texture = ExtResource("4_wf5gs")
 
-[node name="Enemy" parent="." instance=ExtResource("6_fkstv")]
+[node name="Enemy" parent="." instance=ExtResource("5_je4ve")]
 position = Vector2(336, -141)
 scale = Vector2(1.69308, 1.69308)
 
-[node name="Enemy2" parent="." instance=ExtResource("6_fkstv")]
+[node name="Enemy2" parent="." instance=ExtResource("5_je4ve")]
 position = Vector2(-320, -153)
 scale = Vector2(1.69308, 1.69308)
 
-[node name="Enemy3" parent="." instance=ExtResource("6_fkstv")]
+[node name="Enemy3" parent="." instance=ExtResource("5_je4ve")]
 position = Vector2(316, 145)
+scale = Vector2(1.69308, 1.69308)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_je4ve")]
+position = Vector2(-333, 152)
 scale = Vector2(1.69308, 1.69308)
 
 [node name="Ground" type="TileMap" parent="."]
@@ -147,3 +150,4 @@ layer_0/tile_data = PackedInt32Array(-262153, 0, 2, -196617, 0, 2, -131081, 0, 2
 [connection signal="lostEnemy" from="Enemy" to="Door" method="_on_enemy_lost_enemy"]
 [connection signal="lostEnemy" from="Enemy2" to="Door" method="_on_enemy_lost_enemy"]
 [connection signal="lostEnemy" from="Enemy3" to="Door" method="_on_enemy_lost_enemy"]
+[connection signal="lostEnemy" from="Enemy4" to="Door" method="_on_enemy_lost_enemy"]

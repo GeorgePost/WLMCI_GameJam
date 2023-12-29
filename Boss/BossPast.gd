@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var dis_to_player = global_position.distance_to(player.global_position)
 
 @export var dead = false
- 
+signal lost_enemy()
 var health: = 100:
 	set(value):
 		health = value
@@ -64,6 +64,7 @@ func _on_hurt_box_area_entered(area):
 func kill():
 	#$".".queue_free()
 	dead = true
+	emit_signal("lost_enemy")
 	$Alive.hide()
 	hit_box.disabled = true
 	collision_shape_2d.disabled = true
