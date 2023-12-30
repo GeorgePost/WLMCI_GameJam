@@ -6,12 +6,14 @@ var number_of_enemies
 func _ready():
 	number_of_enemies = get_tree().get_nodes_in_group("Enemy").size()
 	Global.enemies = get_tree().get_nodes_in_group("Enemy").size()
+	print(Global.enemies)
 	$CollisionShape2D.set_deferred("disabled", true)
 	hide(); #Hide the door
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(Global.enemies)
 	if(number_of_enemies==0 || Global.enemies == 0):
 		$CollisionShape2D.set_deferred("disabled", false)
 		show();

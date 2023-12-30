@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703894796
+::res://::1703897080
 BossBulletPast.tscn::PackedScene::3327410173303847452::1703894771::0::1::::<><>::res://EnemyBullet.gd<>uid://c2mp8xgjvu1qg::::res://Assets/Boulder.png
 CharacterBody2D.gd::GDScript::-1::1703894771::0::1::::<>CharacterBody2D<>::
-Door.gd::GDScript::-1::1703894771::0::1::::<>Area2D<>::
+Door.gd::GDScript::-1::1703894971::0::1::::<>Area2D<>::
 Enemy.gd::GDScript::-1::1703894771::0::1::::<>CharacterBody2D<>::
 enemy.tscn::PackedScene::819555110000103488::1703894771::0::1::::<><>::res://Enemy.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav
 EnemyBullet.gd::GDScript::-1::1703894771::0::1::::EnemyBulletFuture<>Area2D<>::
@@ -16,17 +16,18 @@ explosion_bullet.tscn::PackedScene::8164559393555405410::1703894771::0::1::::<><
 final_boss.gd::GDScript::-1::1703894771::0::1::::<>CharacterBody2D<>::
 final_boss.tscn::PackedScene::4514143548032562982::1703894771::0::1::::<><>::res://final_boss.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://ShootOld.gd<>res://Boss/Follow.gd<>res://ExplosionShoot.gd<>res://Boss/Dash.gd<>uid://dvc5ocjroeqmg::::res://Assets/Sounds/Explosion.wav<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav
 Global.gd::GDScript::-1::1703894771::0::1::::<>Node<>::
-level_1.tscn::PackedScene::8551071453189950002::1703894771::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>res://Door.gd
-level_2.tscn::PackedScene::1990897289170340674::1703894771::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://lw87ntxtx7jg::::res://enemy.tscn
+level_1.tscn::PackedScene::8551071453189950002::1703895187::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://lw87ntxtx7jg::::res://enemy.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>res://Door.gd
+level_2.tscn::PackedScene::1990897289170340674::1703895187::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://lw87ntxtx7jg::::res://enemy.tscn
 level_3.tscn::PackedScene::2986601443900117349::1703894771::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://lw87ntxtx7jg::::res://enemy.tscn
 level_4.tscn::PackedScene::8417426629263759975::1703894771::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://lw87ntxtx7jg::::res://enemy.tscn
-level_5.tscn::PackedScene::1459094894418379952::1703894771::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://cxf7k6uja88kj::::res://Boss/BossPast.tscn
-level_6.tscn::PackedScene::8088693551680293772::1703894771::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
-level_7.tscn::PackedScene::2992437906654996160::1703894771::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
-level_8.tscn::PackedScene::4061830343606880822::1703894771::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
-level_11.tscn::PackedScene::5102090416971784205::1703894771::0::1::::<><>::uid://417dmr2j6q7v::::res://Assets/Texture/PresentTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b20poguirk4rv::::res://enemy_present.tscn
-menu.gd::GDScript::-1::1703894771::0::1::::<>Control<>::
-menu.tscn::PackedScene::400222257420965804::1703894771::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Assets/Menu Background.png<>uid://dbpohk275xkgx::::res://Assets/Sounds/TitleScreen.mp3
+level_5.tscn::PackedScene::1459094894418379952::1703896613::0::1::::<><>::uid://bqcjyqidi3gcm::::res://Assets/Texture/CaveTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://cxf7k6uja88kj::::res://Boss/BossPast.tscn
+level_6.tscn::PackedScene::8088693551680293772::1703895465::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
+level_7.tscn::PackedScene::2992437906654996160::1703895465::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
+level_8.tscn::PackedScene::4061830343606880822::1703896668::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b5p5e3u3xnfvj::::res://enemy_future.tscn
+level_9.tscn::PackedScene::4172932188805647623::1703897033::0::1::::<><>::uid://b03ofr33mfp2b::::res://Assets/Texture/Future Textures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png
+level_11.tscn::PackedScene::5102090416971784205::1703895515::0::1::::<><>::uid://417dmr2j6q7v::::res://Assets/Texture/PresentTextures.png<>res://Door.gd<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://b20poguirk4rv::::res://enemy_present.tscn
+menu.gd::GDScript::-1::1703895236::0::1::::<>Control<>::
+menu.tscn::PackedScene::400222257420965804::1703895465::0::1::::<><>::res://menu.gd<>uid://daqd5re04xph0::::res://Assets/Menu Background.png<>uid://dbpohk275xkgx::::res://Assets/Sounds/TitleScreen.mp3
 player.tscn::PackedScene::3279778836609990075::1703894771::0::1::::<><>::res://PlayerScript.gd<>uid://i5lu7ex1gdr7::::res://Assets/character.png<>uid://d2x0iiknbmqmr::::res://Assets/muzzle_flash.png<>uid://3qto1rm1c1xg::::res://Weapons/sword.tscn<>res://Weapons/Weapon.gd<>uid://15tfw13d4w28::::res://transition_panel.tscn<>uid://ceuthu25iiu5x::::res://Weapons/water_gun_1.tscn<>uid://1rvdhhdl14mq::::res://Assets/Spotlight.png<>uid://bbvrv2ec25gdm::::res://Assets/Sounds/CharacterDeath.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav<>uid://qrfdo8413em::::res://Assets/Sounds/Swing.wav
 PlayerScript.gd::GDScript::-1::1703894771::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1703894771::0::1::::<><>::
@@ -36,7 +37,7 @@ Sprite2D.gd::GDScript::-1::1703894771::0::1::::<>Sprite2D<>::
 TransitionPanel.gd::GDScript::-1::1703894771::0::1::::<>Control<>::
 transition_panel.tscn::PackedScene::1888005015998707623::1703894771::0::1::::<><>::res://TransitionPanel.gd
 World.tscn::PackedScene::1948655630960664290::1703894771::0::1::::<><>::uid://ds1x7h8k5jaqm::::res://Assets/Texture/TX Tileset Grass.png<>uid://cxf7k6uja88kj::::res://Boss/BossPast.tscn<>uid://bmy0qi4oomrup::::res://player.tscn<>uid://b5kxjxekgmel7::::res://final_boss.tscn<>uid://d14iejt6m78bi::::res://Boss/boss_1.tscn
-::res://Assets/::1703894770
+::res://Assets/::1703894798
 bomb.png::CompressedTexture2D::2415863799384384761::1703894770::1703894798::1::::<><>::
 Boulder.png::CompressedTexture2D::6693683582495830686::1703894770::1703894798::1::::<><>::
 character.png::CompressedTexture2D::624147372531003038::1703894770::1703894798::1::::<><>::
@@ -50,7 +51,7 @@ Spotlight.png::CompressedTexture2D::1861285149266812348::1703894770::1703894798:
 WaterGuns.png::CompressedTexture2D::6895291547713582136::1703894770::1703894798::1::::<><>::
 Weapons1.png::CompressedTexture2D::3477479960494785143::1703894770::1703894798::1::::<><>::
 Weapons.png::CompressedTexture2D::6240737566789224213::1703894770::1703894798::1::::<><>::
-::res://Assets/Sounds/::1703894770
+::res://Assets/Sounds/::1703894799
 CharacterDeath.wav::AudioStreamWAV::2501032575153231082::1703894770::1703894799::1::::<><>::
 EnemyDamage.wav::AudioStreamWAV::1807807223884341866::1703894770::1703894799::1::::<><>::
 Explosion.wav::AudioStreamWAV::8639203153624992318::1703894770::1703894799::1::::<><>::
@@ -58,7 +59,7 @@ LaserShot.wav::AudioStreamWAV::5248682390519961541::1703894770::1703894799::1:::
 PastTribalTheme.wav::AudioStreamWAV::1727354999810971948::1703894770::1703894799::1::::<><>::
 Swing.wav::AudioStreamWAV::34071342648000196::1703894770::1703894799::1::::<><>::
 TitleScreen.mp3::AudioStreamMP3::7261279667922457059::1703894770::1703894798::1::::<><>::
-::res://Assets/Texture/::1703894770
+::res://Assets/Texture/::1703894799
 CaveTextures.png::CompressedTexture2D::3514161102278496552::1703894770::1703894799::1::::<><>::
 Future Textures.png::CompressedTexture2D::4199804256065758139::1703894770::1703894799::1::::<><>::
 PresentTextures.png::CompressedTexture2D::2091099246040633149::1703894770::1703894799::1::::<><>::
@@ -71,8 +72,8 @@ TX Struct.png::CompressedTexture2D::8134116282141141887::1703894770::1703894799:
 TX Tileset Grass.png::CompressedTexture2D::8477789113544820948::1703894770::1703894799::1::::<><>::
 TX Tileset Stone Ground.png::CompressedTexture2D::8905625486450070460::1703894770::1703894799::1::::<><>::
 TX Tileset Wall.png::CompressedTexture2D::1102048623919333439::1703894770::1703894799::1::::<><>::
-::res://Boss/::1703894771
-BossPast.gd::GDScript::-1::1703894770::0::1::::<>CharacterBody2D<>::
+::res://Boss/::1703896613
+BossPast.gd::GDScript::-1::1703896613::0::1::::<>CharacterBody2D<>::
 BossPast.tscn::PackedScene::6399469121069018761::1703894770::0::1::::<><>::res://Boss/BossPast.gd<>uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://15tfw13d4w28::::res://transition_panel.tscn
 boss_1.gd::GDScript::-1::1703894770::0::1::::<>CharacterBody2D<>::
 boss_1.tscn::PackedScene::9044532323140895246::1703894771::0::1::::<><>::uid://bbgnaorml4t6l::::res://Assets/Enemy1.png<>res://Boss/boss_1.gd<>res://Boss/FiniteStateMachine.gd<>res://Boss/Idle.gd<>res://Boss/Shoot1.gd<>res://Boss/Follow.gd<>res://Boss/Dash.gd<>uid://00yk55283a2e::::res://Assets/Sounds/EnemyDamage.wav<>uid://cg1rbde3fx1n2::::res://Assets/Sounds/LaserShot.wav

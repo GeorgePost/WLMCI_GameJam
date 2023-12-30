@@ -49,9 +49,9 @@ func _on_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet") || area.is_in_group("Sword"):
 		$Hit.play()
 		if area == $HitBox: return
-		if player.weaponEquipped == "sword":
+		if Global.weaponEquipped == "sword":
 			health -= 51
-		elif player.weaponEquipped == "gun":
+		elif Global.weaponEquipped == "gun":
 			health -= 51
 		if health <= 0:
 			kill()
@@ -62,7 +62,7 @@ func _on_hurt_box_area_entered(area):
 		color_rect.visible = false
 
 func kill():
-	#$".".queue_free()
+	$".".queue_free()
 	dead = true
 	emit_signal("lost_enemy")
 	$Alive.hide()

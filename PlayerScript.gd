@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var sword = $Weapon/Sword
 @onready var waterGun1 = $Weapon/WaterGun1
 @onready var weapon = $Weapon
-var weaponEquipped = "gun"
 var isAttacking: bool = false
 var dead = false
 var bullet_speed = 2000
@@ -26,6 +25,8 @@ func _ready():
 
 
 func _process(delta):
+	if Global.count >= 6:
+		Global.weaponEquipped = "gun"
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
@@ -35,12 +36,12 @@ func _process(delta):
 	
 	global_rotation = global_position.direction_to(get_global_mouse_position()).angle() + PI/2.0
 	if Input.is_action_just_pressed("attack"):
-		if weaponEquipped == "gun":
+		if Global.weaponEquipped == "gun":
 			waterGun1.visible = true
 			sword.visible = false
 			sword.disable()
 			shoot()
-		elif weaponEquipped == "sword":
+		elif Global.weaponEquipped == "sword":
 			sword.visible = true
 			sword.enable()
 			waterGun1.visible = false
