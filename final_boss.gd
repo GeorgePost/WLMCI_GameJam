@@ -49,9 +49,9 @@ func _on_hurt_box_area_entered(area):
 		$Hit.play()
 		if area == $HitBox: return
 		if Global.weaponEquipped == "sword":
-			health -= 51
+			health -= 2
 		elif Global.weaponEquipped == "gun":
-			health -= 51
+			health -= 2
 		if health <= 0:
 			kill()
 		color_rect.visible = true
@@ -71,6 +71,7 @@ func kill():
 
 
 func _on_spawn_timer_timeout():
+	Global.enemies += 1
 	randNumber = randi_range(0,1)
 	var enemy
 	if randNumber == 0:

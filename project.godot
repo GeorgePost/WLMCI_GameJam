@@ -10,14 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GameJamProject"
+config/name="Battle Across The Ages"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://Assets/icon.svg"
+config/icon="res://Assets/character.png"
 
 [autoload]
 
 Global="*res://Global.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 

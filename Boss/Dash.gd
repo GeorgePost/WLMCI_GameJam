@@ -1,5 +1,4 @@
 extends State
-class_name DashState
 
 @onready var timer = $Timer
 @onready var Boss1 = $"../.."
@@ -10,10 +9,7 @@ func transition():
 	var yValue = abs(player.position.y-global_position.y)
 	var readyShoot = xValue <= 350 && yValue <= 350
 	if readyShoot:
-		if owner.health >= 50:
 			get_parent().change_state("Shoot")
-		elif owner.health <= 50:
-			get_parent().change_state("ExplosionShoot")
 		
 
 func dash():

@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bbgnaorml4t6l" path="res://Assets/Enemy1.png" id="2_1eh4r"]
 [ext_resource type="Script" path="res://Boss/FiniteStateMachine.gd" id="3_tgmos"]
 [ext_resource type="Script" path="res://Boss/Idle.gd" id="4_1m3kx"]
-[ext_resource type="Script" path="res://ShootOld.gd" id="5_mkghi"]
+[ext_resource type="Script" path="res://Shoot.gd" id="5_51534"]
 [ext_resource type="Script" path="res://Boss/Follow.gd" id="6_1py1c"]
 [ext_resource type="Script" path="res://ExplosionShoot.gd" id="6_cxvv3"]
-[ext_resource type="Script" path="res://Boss/Dash.gd" id="7_on1xc"]
+[ext_resource type="Script" path="res://Dash1.gd" id="8_4aylc"]
 [ext_resource type="AudioStream" uid="uid://dvc5ocjroeqmg" path="res://Assets/Sounds/Explosion.wav" id="9_fhkei"]
 [ext_resource type="AudioStream" uid="uid://00yk55283a2e" path="res://Assets/Sounds/EnemyDamage.wav" id="10_ceuul"]
 [ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="11_gjefl"]
@@ -111,7 +111,7 @@ script = ExtResource("3_tgmos")
 script = ExtResource("4_1m3kx")
 
 [node name="Shoot" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("5_mkghi")
+script = ExtResource("5_51534")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
 wait_time = 0.75
@@ -126,7 +126,7 @@ wait_time = 0.75
 script = ExtResource("6_1py1c")
 
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("7_on1xc")
+script = ExtResource("8_4aylc")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Dash"]
 wait_time = 1.5
@@ -152,7 +152,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 4096.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 

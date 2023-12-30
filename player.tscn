@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmy0qi4oomrup"]
+[gd_scene load_steps=19 format=3 uid="uid://bmy0qi4oomrup"]
 
 [ext_resource type="Script" path="res://PlayerScript.gd" id="1_pq5u1"]
 [ext_resource type="Texture2D" uid="uid://i5lu7ex1gdr7" path="res://Assets/character.png" id="2_oiu63"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://bbvrv2ec25gdm" path="res://Assets/Sounds/CharacterDeath.wav" id="9_8a7ok"]
 [ext_resource type="AudioStream" uid="uid://cg1rbde3fx1n2" path="res://Assets/Sounds/LaserShot.wav" id="10_eht7b"]
 [ext_resource type="AudioStream" uid="uid://qrfdo8413em" path="res://Assets/Sounds/Swing.wav" id="11_og1gq"]
+[ext_resource type="AudioStream" uid="uid://yu0jw4dcrnfg" path="res://Assets/Sounds/PastTribalTheme.wav" id="12_ckpue"]
+[ext_resource type="AudioStream" uid="uid://cutnqdjmiro8w" path="res://Assets/Sounds/FutureMusic.mp3" id="13_naqi6"]
+[ext_resource type="AudioStream" uid="uid://bby3r13ypekj1" path="res://Assets/Sounds/PresentMusic.mp3" id="14_x7lma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cufxn"]
 radius = 65.0077
@@ -204,6 +207,15 @@ stream = ExtResource("10_eht7b")
 
 [node name="Swing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_og1gq")
+
+[node name="PastMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ckpue")
+
+[node name="FutureMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_naqi6")
+
+[node name="PresentMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_x7lma")
 
 [connection signal="timeout" from="MuzzleFlash/Timer" to="MuzzleFlash" method="hide"]
 [connection signal="button_up" from="CanvasLayer/Deathscreen/Panel/Button" to="." method="restart"]

@@ -48,9 +48,9 @@ func _on_hurt_box_area_entered(area):
 		$Damaged.play()
 		if area == $HitBox: return
 		if Global.weaponEquipped == "sword":
-			health -= 51
+			health -= 5
 		elif Global.weaponEquipped == "gun":
-			health -= 51
+			health -= 5
 		if health <= 0:
 			kill()
 		color_rect.visible = true

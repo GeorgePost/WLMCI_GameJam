@@ -108,7 +108,7 @@ script = ExtResource("4_w25es")
 script = ExtResource("5_5cptx")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Shoot"]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("6_75se0")

@@ -19,6 +19,12 @@ var bosses = [$"../Boss1", $"../Boss1", $"../FinalBoss"]
 
 
 func _ready():
+	if Global.count <= 5:
+		$PastMusic.play()
+	elif Global.count <= 10:
+		$FutureMusic.play()
+	elif Global.count <= 15:
+		$PresentMusic.play()
 	animations.play("RESET")
 	sword.visible = false
 	waterGun1.visible = false
@@ -48,8 +54,6 @@ func _process(delta):
 			swing()
 
 func _physics_process(delta):
-	#if bosses[Global.bossNum].dead == true:
-		#transitionFunc()
 	if dead:
 		return
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -89,16 +93,59 @@ func shoot():
 	bullet_instance.rotation = move_direction.angle()
 
 func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	Global.count += 1
-	get_tree().change_scene_to_file("res://level_" + str(Global.count) + ".tscn") # Replace with function body.
+	if Global.count == 5:
+		Global.count += 1
+		if dead:
+			return
+		dead = true
+		transition.changeText("You've altered history and now it's time to leap forward!\n
+									Upon arriving in the future, you discover a water gun,\n
+									surprisingly potent against the robotic foes that await!")
+		transition.changeScene("res://level_" + str(Global.count) + ".tscn")
+		transition.show()
+		z_index = -1
+	elif Global.count == 10:
+		Global.count += 1
+		if dead:
+			return
+		dead = true
+		transition.changeText("Now, return to the present for the ultimate showdown!\n
+							Armed with knowledge from past and future, face the final boss\n
+							in a decisive battle that will determine the fate of the world. ")
+		transition.changeScene("res://level_" + str(Global.count) + ".tscn")
+		transition.show()
+		z_index = -1
+	elif Global.count == 15:
+		Global.count += 1
+		if dead:
+			return
+		dead = true
+		transition.changeText("Victory! With the final boss defeated, peace is restored.\n
+								As the world heals, your journey across time\n
+								leaves a legacy of hope and courage. The future, once grim,\n
+								now shines brightly thanks to your valiant efforts.
+								\nThank you for playing our game!\nCreated by:\nGeorge P.\nKevin K.")
+		transition.changeScene("res://menu.tscn")
+		transition.show()
+		z_index = -1
+	elif Global.count == 0:
+		Global.count += 1
+		if dead:
+			return
+		dead = true
+		transition.changeText("Dr. Tim E., an aged scientist, cracks time travel to stop 'The Malefactor,'\n 
+								a villain ravaging the future. As the clock ticks,\n
+								you must outwit history itself and change destiny.\n
+								The future is in your hands - the journey begins now!")
+		transition.changeScene("res://level_" + str(Global.count) + ".tscn")
+		transition.show()
+		z_index = -1
+	else:
+		Global.count += 1
+		get_tree().change_scene_to_file("res://level_" + str(Global.count) + ".tscn") # Replace with function body.
 
 	
-	#if dead:
-		#return
-	#dead = true
-	#transition.changeText("You have completed the first level!\nCongratulations Idk sadhasoh iuhfsualdhfl")
-	#transition.show()
-	#z_index = -1
+
 
 func transitionFunc():
 	if dead:
