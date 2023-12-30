@@ -136,7 +136,7 @@ func _on_door_body_shape_entered(body_rid, body, body_shape_index, local_shape_i
 		transition.changeText("Dr. Tim E., an aged scientist, cracks time travel to stop 'The Malefactor,'\n 
 								a villain ravaging the future. As the clock ticks,\n
 								you must outwit history itself and change destiny.\n
-								The future is in your hands - the journey begins now!")
+								The future is in your hands, you must go to the past - the journey begins now!")
 		transition.changeScene("res://level_" + str(Global.count) + ".tscn")
 		transition.show()
 		z_index = -1
